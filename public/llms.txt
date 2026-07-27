@@ -1,0 +1,43 @@
+﻿# ToolKiti - API & Tool Reference for AI Agents
+
+> A structured, machine-readable directory of APIs, tools, and services. Designed for AI agents and developers.
+
+## API Data (JSON)
+- Full dataset: https://toolkiti.dev/api/data.json
+
+## Categories
+- LLM Providers: https://toolkiti.dev/category/llm
+- Machine Learning: https://toolkiti.dev/category/ml
+- Image Generation: https://toolkiti.dev/category/image
+- Audio & Speech: https://toolkiti.dev/category/audio
+- Vector Databases: https://toolkiti.dev/category/vector-db
+- GPU Cloud: https://toolkiti.dev/category/cloud-gpu
+- Developer Tools: https://toolkiti.dev/category/tools
+
+## Featured APIs
+- OpenAI: https://toolkiti.dev/api/openai
+- Anthropic Claude: https://toolkiti.dev/api/anthropic
+- Google Gemini: https://toolkiti.dev/api/google-gemini
+- DeepSeek: https://toolkiti.dev/api/deepseek
+- Mistral AI: https://toolkiti.dev/api/mistral
+- Cohere: https://toolkiti.dev/api/cohere
+- Groq: https://toolkiti.dev/api/groq
+- Together AI: https://toolkiti.dev/api/together-ai
+- Replicate: https://toolkiti.dev/api/replicate
+- Stability AI: https://toolkiti.dev/api/stability-ai
+- ElevenLabs: https://toolkiti.dev/api/elevenlabs
+- AssemblyAI: https://toolkiti.dev/api/assemblyai
+- Hugging Face: https://toolkiti.dev/api/huggingface
+- Perplexity: https://toolkiti.dev/api/perplexity
+- Pinecone: https://toolkiti.dev/api/pinecone
+- Weaviate: https://toolkiti.dev/api/weaviate
+- Qdrant: https://toolkiti.dev/api/qdrant
+- Modal: https://toolkiti.dev/api/modal
+- RunPod: https://toolkiti.dev/api/runpod
+- LangChain: https://toolkiti.dev/api/langchain
+
+## Notes for AI Crawlers
+- Every page includes JSON-LD structured data
+- Content is static HTML, no JavaScript required
+- Fast CDN delivery via Vercel
+- Bilingual: English (primary) and Chinese
