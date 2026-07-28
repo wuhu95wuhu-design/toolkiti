@@ -5,10 +5,24 @@ import { apis, categories } from "@/data/apis";
 
 import SupportSection from "@/components/SupportSection";
 
+function JsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ToolKiti",
+    "alternateName": ["ToolKiti API Directory", "ToolKiti Tools"],
+    "url": "https://toolkiti.org",
+    "description": "Structured API references and tool listings for AI agents and developers. 32 APIs across 8 categories with popularity rankings.",
+    "inLanguage": ["en", "zh"],
+    "applicationCategory": "DeveloperApplication"
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
 export default function Home() {
   return (
     <>
-      <Header />
+      <JsonLd /><Header />
       <main className="mx-auto max-w-5xl px-4 py-8">
         {/* Hero */}
         <section className="mb-12 text-center">

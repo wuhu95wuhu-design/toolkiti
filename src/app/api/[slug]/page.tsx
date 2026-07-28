@@ -2,9 +2,29 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import { apis, getApiBySlug } from "@/data/apis";
+import { ApiEntry } from "@/lib/types";
 
 export async function generateStaticParams() {
   return apis.map(api => ({ slug: api.slug }));
+}
+
+function JsonLd({ api }: { api: ApiEntry }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": api.name,
+    "alternateName": api.nameCn,
+    "description": api.description,
+    "url": `https://toolkiti.org/api/${api.slug}`,
+    "applicationCategory": api.categoryCn,
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": api.pricing,
+      "priceCurrency": "USD"
+    }
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
 export default async function ApiPage({ params }: { params: Promise<{ slug: string }> }) {
