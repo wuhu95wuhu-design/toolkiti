@@ -17,6 +17,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "Node.js", "Go", "Java", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 100,
     tags: ["llm", "chat", "embeddings", "vision", "audio"]
   },
   {
@@ -35,6 +36,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "Go", "Java", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 87,
     tags: ["llm", "chat", "analysis"]
   },
   {
@@ -53,6 +55,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "Node.js", "Go", "Swift", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 85,
     tags: ["llm", "multimodal", "vision"]
   },
   {
@@ -71,6 +74,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 83,
     tags: ["llm", "reasoning", "chat"]
   },
   {
@@ -89,6 +93,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "Go", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 68,
     tags: ["llm", "chat", "code"]
   },
   {
@@ -107,6 +112,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "Go", "Java", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 65,
     tags: ["llm", "embedding", "search", "rerank"]
   },
   {
@@ -125,6 +131,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "curl", "OpenAI-compatible SDKs"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 72,
+    referralUrl: "https://groq.com/?ref=toolkiti",
     tags: ["llm", "inference", "speed"]
   },
   {
@@ -143,6 +151,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 70,
+    referralUrl: "https://together.ai/?ref=toolkiti",
     tags: ["llm", "inference", "open-source"]
   },
   {
@@ -161,6 +171,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "Node.js", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 73,
+    referralUrl: "https://replicate.com/pricing",
     tags: ["ml", "inference", "open-source"]
   },
   {
@@ -179,6 +191,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 60,
     tags: ["image", "generation", "stable-diffusion"]
   },
   {
@@ -197,6 +210,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "Node.js", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 65,
+    referralUrl: "https://elevenlabs.io/?ref=toolkiti",
     tags: ["audio", "tts", "voice-cloning"]
   },
   {
@@ -215,6 +230,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "JavaScript", "Go", "Ruby", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 50,
     tags: ["audio", "stt", "transcription"]
   },
   {
@@ -233,6 +249,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "JavaScript", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 50,
     tags: ["ml", "transformers", "inference"]
   },
   {
@@ -251,6 +268,7 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "curl", "OpenAI-compatible SDKs"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 58,
     tags: ["llm", "search", "real-time"]
   },
   {
@@ -269,6 +287,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "Node.js", "Go", "Java", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 78,
+    referralUrl: "https://www.pinecone.io/",
     tags: ["vector-db", "search", "rag"]
   },
   {
@@ -287,6 +307,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "Go", "Java", ".NET"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 64,
+    referralUrl: "https://weaviate.io/?ref=toolkiti",
     tags: ["vector-db", "search", "open-source"]
   },
   {
@@ -305,6 +327,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript", "Go", "Rust", "Java"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 63,
+    referralUrl: "https://qdrant.tech/?ref=toolkiti",
     tags: ["vector-db", "search", "rust"]
   },
   {
@@ -323,6 +347,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python SDK"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 52,
+    referralUrl: "https://modal.com/?ref=toolkiti",
     tags: ["cloud", "gpu", "serverless"]
   },
   {
@@ -341,6 +367,8 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "curl"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 50,
+    referralUrl: "https://runpod.io?ref=",
     tags: ["cloud", "gpu", "serverless"]
   },
   {
@@ -359,19 +387,10 @@ export const apis: ApiEntry[] = [
     sdks: ["Python", "TypeScript/JavaScript", "Java (LangChain4j)"],
     status: "online",
     lastUpdated: "2026-07-27",
+    popularity: 55,
     tags: ["framework", "llm", "agent", "rag"]
-  }
-];
-
-export const categories = [
-  { slug: "llm", name: "LLM Providers", nameCn: "大语言模型" },
-  { slug: "ml", name: "Machine Learning", nameCn: "机器学习" },
-  { slug: "image", name: "Image Generation", nameCn: "图像生成" },
-  { slug: "audio", name: "Audio & Speech", nameCn: "音频语音" },
-  { slug: "vector-db", name: "Vector Databases", nameCn: "向量数据库" },
-  { slug: "cloud-gpu", name: "GPU Cloud", nameCn: "GPU 云" },
-  { slug: "tools", name: "Developer Tools", nameCn: "开发工具" },
-  // === WEB SEARCH (AI agent most-called APIs) ===
+  },
+// === WEB SEARCH (AI agent most-called APIs) ===
   {
     slug: "tavily",
     name: "Tavily Search API",
@@ -388,6 +407,8 @@ export const categories = [
     sdks: ["Python", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 95,
+    referralUrl: "https://tavily.com/?ref=toolkiti",
     tags: ["search", "web", "agents", "realtime"]
   },
   {
@@ -406,6 +427,8 @@ export const categories = [
     sdks: ["curl", "Python", "JavaScript"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 88,
+    referralUrl: "https://brave.com/search/api/?ref=toolkiti",
     tags: ["search", "web", "news"]
   },
   {
@@ -424,6 +447,8 @@ export const categories = [
     sdks: ["Python", "Node.js", "Go", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 90,
+    referralUrl: "https://serper.dev/?ref=toolkiti",
     tags: ["search", "google", "serp", "web"]
   },
   {
@@ -442,6 +467,8 @@ export const categories = [
     sdks: ["Python", "TypeScript", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 80,
+    referralUrl: "https://jina.ai/?ref=toolkiti",
     tags: ["embeddings", "search", "reader", "web"]
   },
   {
@@ -460,6 +487,8 @@ export const categories = [
     sdks: ["Python", "TypeScript", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 82,
+    referralUrl: "https://exa.ai/?ref=toolkiti",
     tags: ["search", "semantic", "embeddings", "ai"]
   },
   {
@@ -478,6 +507,8 @@ export const categories = [
     sdks: ["Python", "Node.js", "Go", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 77,
+    referralUrl: "https://firecrawl.dev/?ref=toolkiti",
     tags: ["scraping", "crawling", "web", "markdown"]
   },
 
@@ -498,6 +529,8 @@ export const categories = [
     sdks: ["Python (unofficial)", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 75,
+    referralUrl: "https://www.midjourney.com",
     tags: ["image", "generation", "art", "creative"]
   },
   {
@@ -516,6 +549,7 @@ export const categories = [
     sdks: ["Python", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 62,
     tags: ["image", "generation", "training", "models"]
   },
   {
@@ -534,6 +568,7 @@ export const categories = [
     sdks: ["Python", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 48,
     tags: ["image", "generation", "text", "design"]
   },
 
@@ -554,6 +589,7 @@ export const categories = [
     sdks: ["Octokit (JS/TS)", "PyGithub", "Go-Github", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 92,
     tags: ["github", "code", "devops", "git", "ci-cd"]
   },
   {
@@ -572,6 +608,8 @@ export const categories = [
     sdks: ["JavaScript/TypeScript", "Python", "Dart", "Go", "Swift", "Kotlin"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 76,
+    referralUrl: "https://supabase.com/referral?ref=toolkiti",
     tags: ["database", "auth", "realtime", "backend", "postgres"]
   },
   {
@@ -590,9 +628,25 @@ export const categories = [
     sdks: ["JavaScript/TypeScript", "Python", "Go", "PHP", "Ruby", "Elixir", "curl"],
     status: "online",
     lastUpdated: "2026-07-28",
+    popularity: 55,
+    referralUrl: "https://resend.com/?ref=toolkiti",
     tags: ["email", "transactional", "marketing", "notification"]
   },
-  { slug: "search", name: "Web Search", nameCn: "搜索服务" },];
+  
+];
+
+export const categories = [
+  { slug: "llm", name: "LLM Providers", nameCn: "大语言模型" },
+  { slug: "ml", name: "Machine Learning", nameCn: "机器学习" },
+  { slug: "image", name: "Image Generation", nameCn: "图像生成" },
+  { slug: "audio", name: "Audio & Speech", nameCn: "音频语音" },
+  { slug: "vector-db", name: "Vector Databases", nameCn: "向量数据库" },
+  { slug: "cloud-gpu", name: "GPU Cloud", nameCn: "GPU 云" },
+  { slug: "tools", name: "Developer Tools", nameCn: "开发工具" },
+  { slug: "search", name: "Web Search", nameCn: "搜索服务" },
+];
+
+
 
 export function getApiBySlug(slug: string): ApiEntry | undefined {
   return apis.find(a => a.slug === slug);

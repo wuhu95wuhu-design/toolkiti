@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import ApiCard from "@/components/ApiCard";
 import { apis, categories } from "@/data/apis";
 
+import SupportSection from "@/components/SupportSection";
+
 export default function Home() {
   return (
     <>
@@ -26,6 +28,7 @@ export default function Home() {
                 className="rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-center transition-colors hover:border-[var(--accent)]">
                 <div className="font-medium">{cat.name}</div>
                 <div className="text-xs text-[var(--muted)]">{cat.nameCn}</div>
+                <div className="mt-1 text-[10px] text-[var(--muted)]">{apis.filter(a => a.category === cat.slug).length} APIs</div>
               </Link>
             ))}
           </div>
@@ -35,7 +38,7 @@ export default function Home() {
         <section>
           <h2 className="mb-4 text-lg font-semibold">All APIs & Tools</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {apis.map(api => (
+            {[...apis].sort((a, b) => b.popularity - a.popularity).map(api => (
               <ApiCard key={api.slug} api={api} />
             ))}
           </div>
@@ -54,6 +57,7 @@ export default function Home() {
             <a href="/sitemap.xml" className="underline">sitemap.xml</a>
           </div>
         </section>
+      <SupportSection />
       </main>
     </>
   );

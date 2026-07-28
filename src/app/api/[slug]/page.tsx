@@ -74,7 +74,18 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           <div className="flex flex-wrap gap-1.5">{api.tags.map(t => <span key={t} className="rounded-full bg-[var(--accent)]/10 px-2.5 py-0.5 text-xs text-[var(--accent)]">{t}</span>)}</div>
         </div>
         <p className="mt-8 text-xs text-[var(--muted)]">Last updated: {api.lastUpdated}</p>
-      </main>
+            {/* Affiliate/Referral CTA */}
+      {api.referralUrl && (
+        <div className="mt-8 rounded-lg border border-[var(--border)] bg-[var(--card)] p-6 text-center">
+          <h3 className="mb-2 text-lg font-semibold">Get Started with {api.name}</h3>
+          <p className="mb-4 text-sm text-[var(--muted)]">Click below to visit the official website and start using this API.</p>
+          <a href={api.referralUrl} target="_blank" rel="noopener noreferrer"
+            className="inline-block rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700">
+            Visit {api.name} →
+          </a>
+        </div>
+      )}
+    </main>
     </>
   );
 }
