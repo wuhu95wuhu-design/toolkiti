@@ -7,7 +7,7 @@ export default function SupportSection() {
         consider supporting its growth.
       </p>
       <div className="flex flex-wrap justify-center gap-3">
-        <a href="https://www.buymeacoffee.com/toolkiti" target="_blank" rel="noopener noreferrer"
+        <a href="https://buymeacoffee.com/toolkiti" target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-[#FFDD00] px-5 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90">
           ☕ Buy me a coffee
         </a>
