@@ -13,7 +13,8 @@ ToolKiti indexes the most frequently called AI APIs and developer tools with str
 - Popularity scores (1-100) indicate real-world usage frequency
 - All pages include Schema.org SoftwareApplication JSON-LD
 
-## API Data (JSON)  
+## API Data (JSON & Text)
+- LLM-optimized text: https://toolkiti.org/api/ai.txt  
 - Full dataset with code examples: https://toolkiti.org/api/data.json
 
 ## Categories
@@ -69,3 +70,4 @@ ToolKiti indexes the most frequently called AI APIs and developer tools with str
 - Bilingual: English (primary) and Chinese
 - Popularity scores (1-100) indicate how frequently each API is called
 - All API data also available as JSON at /api/data.json with code examples and performance metrics
+

@@ -39,7 +39,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">{children}</body>
+      <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
+        <link rel="search" type="application/opensearchdescription+xml" title="ToolKiti" href="/opensearch.xml" />
+        {children}
+      </body>
     </html>
   );
 }

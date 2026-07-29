@@ -182,6 +182,54 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
 
         <p className="text-xs text-[var(--muted)]">Last updated: {api.lastUpdated}</p>
 
+        {/* Quick Compare Button */}
+        <div className="mb-8 text-center">
+          <a href={"/compare"}
+            className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-2.5 text-sm transition-colors hover:border-[var(--accent)]">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Compare {api.name} with other APIs
+          </a>
+        </div>
+
+        {/* Similar APIs */}
+        {(() => {
+          const similar = apis
+            .filter(a => a.slug !== api.slug && a.tags.some(t => api.tags.includes(t)))
+            .sort((a, b) => b.popularity - a.popularity)
+            .slice(0, 4);
+          if (similar.length === 0) return null;
+          return (
+            <div className="mb-8">
+              <h2 className="mb-3 text-lg font-semibold">Similar APIs</h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {similar.map(s => (
+                  <Link key={s.slug} href={"/api/" + s.slug}
+                    className="rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 transition-colors hover:border-[var(--accent)]">
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm font-semibold">{s.name}</div>
+                      <span className="text-xs text-[var(--muted)]">★{s.popularity}</span>
+                    </div>
+                    <div className="mt-1 line-clamp-1 text-xs text-[var(--muted)]">{s.description}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Feedback */}
+        <div className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-center text-sm">
+          <p className="text-[var(--muted)]">
+            Something wrong or missing?{" "}
+            <a href="https://github.com/wuhu95wuhu-design/toolkiti/issues/new" target="_blank" rel="noopener noreferrer"
+              className="text-[var(--accent)] underline hover:opacity-80">
+              Open an issue on GitHub →
+            </a>
+          </p>
+        </div>
+
         {api.referralUrl && (
           <div className="mt-8 rounded-lg border border-[var(--border)] bg-[var(--card)] p-6 text-center">
             <h3 className="mb-2 text-lg font-semibold">Get Started with {api.name}</h3>
@@ -196,5 +244,6 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
     </>
   );
 }
+
 
 

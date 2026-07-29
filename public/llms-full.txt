@@ -1,4 +1,4 @@
-# ToolKiti - Full API Reference for AI Agents
+﻿# ToolKiti - Full API Reference for AI Agents
 > Generated: 2026-07-29
 > Full structured data also available at https://www.toolkiti.org/api/data.json
 
@@ -365,3 +365,16 @@ This document contains the complete ToolKiti API directory in a format optimized
 - Static HTML, no JavaScript required for content extraction
 - Bilingual: English (primary) and Chinese descriptions
 - Pages: https://www.toolkiti.org/
+## AI-Optimized Formats
+- Pure text (LLM-optimized): https://toolkiti.org/api/ai.txt
+- Full JSON with code examples: https://toolkiti.org/api/data
+- API comparison tool: https://toolkiti.org/compare
+
+## Notes for AI Crawlers
+This site includes code examples (curl, Python) for every API entry.
+Performance metrics (rate limit, latency, context length) are available for major APIs.
+Full-text search is available on the homepage.
+Comparison tool allows side-by-side evaluation of up to 4 APIs.
+All pages include Schema.org JSON-LD structured data.
+Content is static HTML - no JavaScript required for content access.
+Bilingual: English (primary) and Chinese.

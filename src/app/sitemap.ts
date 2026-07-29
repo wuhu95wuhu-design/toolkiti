@@ -5,6 +5,8 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
+    { url: "https://toolkiti.org/api/ai.txt", lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.9 },
+    { url: "https://toolkiti.org/opensearch.xml", lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.3 },
     { url: "https://toolkiti.org", lastModified: new Date(), changeFrequency: "daily" as const, priority: 1 },
     { url: "https://toolkiti.org/compare", lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: "https://toolkiti.org/sponsor", lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
