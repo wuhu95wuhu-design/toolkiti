@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: api.name + " API",
       description: api.descriptionCn || api.description,
-      url: "https://www.toolkiti.org/api/" + api.slug,
+      url: "https://toolkiti.org/api/" + api.slug,
     },
   };
 }
@@ -196,4 +196,5 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
     </>
   );
 }
+
 

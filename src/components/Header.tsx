@@ -12,10 +12,11 @@ export default function Header() {
         <nav className="flex items-center gap-4 text-sm text-[var(--muted)]">
           <Link href="/" className="transition-colors hover:text-[var(--fg)]">Home</Link>
           <Link href="/compare" className="transition-colors hover:text-[var(--fg)]">Compare</Link>
-          <a href="/api/data.json" target="_blank" className="transition-colors hover:text-[var(--fg)]">API</a>
+          <a href="/api/data" target="_blank" className="transition-colors hover:text-[var(--fg)]">API</a>
           <Link href="/sponsor" className="rounded-lg border border-[var(--border)] px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--fg)]">Sponsor</Link>
         </nav>
       </div>
     </header>
   );
 }
+

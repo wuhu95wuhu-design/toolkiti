@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://www.toolkiti.org";
+const siteUrl = "https://toolkiti.org";
 
 export const metadata: Metadata = {
   title: {
@@ -43,3 +43,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
