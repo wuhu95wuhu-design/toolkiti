@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const siteUrl = "https://toolkiti.org";
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
         <link rel="search" type="application/opensearchdescription+xml" title="ToolKiti" href="/opensearch.xml" />
         {children}
+        <Analytics />
       </body>
     </html>
   );
