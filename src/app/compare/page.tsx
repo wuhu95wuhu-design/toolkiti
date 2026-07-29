@@ -44,7 +44,7 @@ export default function ComparePage() {
 
         {/* Selection */}
         <div className="mb-8 flex flex-wrap gap-2">
-          {apis.sort((a, b) => b.popularity - a.popularity).map(api => (
+          {[...apis].sort((a, b) => b.popularity - a.popularity).map(api => (
             <button
               key={api.slug}
               onClick={() => toggleApi(api.slug)}
@@ -128,3 +128,4 @@ export default function ComparePage() {
     </>
   );
 }
+

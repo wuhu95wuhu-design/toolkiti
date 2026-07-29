@@ -118,3 +118,4 @@ export default function SearchSection() {
     </div>
   );
 }
+
