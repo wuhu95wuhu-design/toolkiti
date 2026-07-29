@@ -1,8 +1,9 @@
 ﻿import Link from "next/link";
 import Header from "@/components/Header";
+import Logo from "@/components/Logo";
 import ApiCard from "@/components/ApiCard";
+import SearchSection from "@/components/SearchSection";
 import { apis, categories } from "@/data/apis";
-
 import SupportSection from "@/components/SupportSection";
 
 function JsonLd() {
@@ -12,7 +13,7 @@ function JsonLd() {
     "name": "ToolKiti",
     "alternateName": ["ToolKiti API Directory", "ToolKiti Tools"],
     "url": "https://toolkiti.org",
-    "description": "Structured API references and tool listings for AI agents and developers. 32 APIs across 8 categories with popularity rankings.",
+    "description": "Structured API references and tool listings for AI agents and developers. 32 APIs across 8 categories with popularity rankings, code examples, and comparison tools.",
     "inLanguage": ["en", "zh"],
     "applicationCategory": "DeveloperApplication"
   };
@@ -22,19 +23,28 @@ function JsonLd() {
 export default function Home() {
   return (
     <>
-      <JsonLd /><Header />
+      <JsonLd />
+      <Header />
       <main className="mx-auto max-w-5xl px-4 py-8">
         {/* Hero */}
-        <section className="mb-12 text-center">
+        <section className="mb-8 text-center">
+          <div className="mb-4 flex justify-center">
+            <Logo size={48} />
+          </div>
           <h1 className="mb-3 text-3xl font-bold">ToolKiti</h1>
           <p className="mx-auto max-w-xl text-[var(--muted)]">
             Structured API references and tool listings, designed for AI agents and developers.
-            Clean, machine-readable, bilingual.
+            Clean, machine-readable, bilingual. Featuring code examples, search, and comparison tools.
           </p>
         </section>
 
+        {/* Search */}
+        <section className="mb-10">
+          <SearchSection />
+        </section>
+
         {/* Categories */}
-        <section className="mb-12">
+        <section className="mb-10">
           <h2 className="mb-4 text-lg font-semibold">Categories</h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
             {categories.map(cat => (
@@ -48,8 +58,23 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Popular APIs */}
+        <section className="mb-10">
+          <h2 className="mb-4 text-lg font-semibold">Popular APIs</h2>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[...apis].sort((a, b) => b.popularity - a.popularity).slice(0, 12).map(api => (
+              <ApiCard key={api.slug} api={api} />
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <Link href="/compare" className="inline-flex items-center gap-1 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-2 text-sm transition-colors hover:border-[var(--accent)]">
+              Compare APIs →
+            </Link>
+          </div>
+        </section>
+
         {/* All APIs */}
-        <section>
+        <section className="mb-10">
           <h2 className="mb-4 text-lg font-semibold">All APIs & Tools</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[...apis].sort((a, b) => b.popularity - a.popularity).map(api => (
@@ -62,7 +87,7 @@ export default function Home() {
         <section className="mt-16 border-t border-[var(--border)] pt-8">
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">For AI Agents</h2>
           <p className="mb-3 text-sm text-[var(--muted)]">
-            This site provides structured JSON-LD data on every page. AI crawlers can access the full dataset at:
+            This site provides structured JSON-LD data on every page and code examples in machine-readable format. AI crawlers can access the full dataset at:
           </p>
           <code className="rounded bg-[var(--card)] px-3 py-1.5 text-sm">/api/data.json</code>
           <div className="mt-3 space-x-3 text-sm">
@@ -71,7 +96,8 @@ export default function Home() {
             <a href="/sitemap.xml" className="underline">sitemap.xml</a>
           </div>
         </section>
-      <SupportSection />
+
+        <SupportSection />
       </main>
     </>
   );

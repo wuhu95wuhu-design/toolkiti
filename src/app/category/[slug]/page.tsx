@@ -1,10 +1,29 @@
-﻿import Link from "next/link";
+import Link from "next/link";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ApiCard from "@/components/ApiCard";
 import { apis, categories, getApisByCategory } from "@/data/apis";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   return categories.map(cat => ({ slug: cat.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const cat = categories.find(c => c.slug === slug);
+  if (!cat) return { title: "Category Not Found" };
+  const count = getApisByCategory(slug).length;
+  return {
+    title: cat.name + " (" + cat.nameCn + ") — " + count + " APIs",
+    description: count + " APIs in the " + cat.name + " (" + cat.nameCn + ") category. " + getApisByCategory(slug).map(a => a.name).join(", ") + ".",
+    openGraph: {
+      title: cat.name + " APIs",
+      description: "Browse " + count + " APIs in the " + cat.nameCn + " category.",
+      url: "https://www.toolkiti.org/category/" + cat.slug,
+    },
+  };
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {

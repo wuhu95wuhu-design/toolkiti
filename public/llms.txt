@@ -1,12 +1,20 @@
-# ToolKiti - API & Tool Reference for AI Agents
+﻿# ToolKiti - API & Tool Reference for AI Agents
 
-> A structured, machine-readable directory of 32 APIs, tools, and services. Designed for AI agents and developers.
+> A structured, machine-readable directory of 32 APIs, tools, and services. Designed for AI agents and developers. Every API page now includes code examples, key features, rate limits, latency, and a comparison tool.
 
 ## Summary
-ToolKiti indexes the most frequently called AI APIs and developer tools with structured metadata, pricing, endpoints, SDKs, and authentication info. Every page has JSON-LD structured data. Content is static HTML, no JavaScript required.
+ToolKiti indexes the most frequently called AI APIs and developer tools with structured metadata, pricing, endpoints, SDKs, authentication info, code examples, and performance metrics. Every page has JSON-LD structured data. Content is static HTML, no JavaScript required. Built with Next.js SSR + Cloudflare CDN.
 
-## API Data (JSON)
-- Full dataset: https://toolkiti.org/api/data.json
+## Features
+- Full dataset (JSON, with code examples): https://toolkiti.org/api/data.json
+- Compare APIs side by side: https://toolkiti.org/compare
+- Full text search across all APIs: Available on homepage
+- Bilingual: English (primary) and Chinese
+- Popularity scores (1-100) indicate real-world usage frequency
+- All pages include Schema.org SoftwareApplication JSON-LD
+
+## API Data (JSON)  
+- Full dataset with code examples: https://toolkiti.org/api/data.json
 
 ## Categories
 - LLM Providers (9 APIs): https://toolkiti.org/category/llm
@@ -54,7 +62,10 @@ ToolKiti indexes the most frequently called AI APIs and developer tools with str
 
 ## Notes for AI Crawlers
 - Every page includes JSON-LD structured data with Schema.org WebSite and SoftwareApplication types
+- Code examples available in curl, Python, and other languages on each detail page
+- API comparison tool at /compare for side-by-side evaluation
 - Content is static HTML, no JavaScript required
 - Fast CDN delivery via Vercel + Cloudflare
 - Bilingual: English (primary) and Chinese
 - Popularity scores (1-100) indicate how frequently each API is called
+- All API data also available as JSON at /api/data.json with code examples and performance metrics

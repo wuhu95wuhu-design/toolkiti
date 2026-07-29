@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "prebuild": "node scripts/prebuild.mjs",
+    "build": "node scripts/prebuild.mjs && cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next build",
+    "dev": "node scripts/prebuild.mjs && cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next dev",
+    "start": "next start",
+    "validate": "node scripts/prebuild.mjs"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
