@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+﻿import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: false,
+  },
+  async rewrites() {
+    return [
+      { source: "/api/data.json", destination: "/api/data" },
+    ];
   },
 };
 
