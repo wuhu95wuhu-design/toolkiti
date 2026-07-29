@@ -2,7 +2,7 @@
 import { apis } from "@/data/apis";
 import { extendedData } from "@/data/extended";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const enhanced = apis.map(api => {
@@ -22,7 +22,9 @@ export async function GET() {
   return NextResponse.json(enhanced, {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
+      "Cache-Control": "no-cache, no-store, must-revalidate",
+      "Pragma": "no-cache",
+      "Expires": "0",
     },
   });
 }
