@@ -1,13 +1,37 @@
 ﻿"use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { apis } from "@/data/apis";
-import type { ApiEntry } from "@/lib/types";
-import { extendedData } from "@/data/extended";
+
+interface SearchApi {
+  slug: string;
+  name: string;
+  nameCn: string;
+  description: string;
+  descriptionCn: string;
+  categoryCn: string;
+  tags: string[];
+  popularity: number;
+}
+
+const popularities: Record<string, { label: string; className: string }> = {
+  "100": { label: "🔥 HOT", className: "text-red-500" },
+  "95": { label: "🔥 HOT", className: "text-red-500" },
+  "92": { label: "🔥 HOT", className: "text-red-500" },
+  "90": { label: "🔥 HOT", className: "text-red-500" },
+  "88": { label: "★ Popular", className: "text-orange-500" },
+  "87": { label: "★ Popular", className: "text-orange-500" },
+  "85": { label: "★ Popular", className: "text-orange-500" },
+  "83": { label: "★ Popular", className: "text-orange-500" },
+  "82": { label: "★ Popular", className: "text-orange-500" },
+  "80": { label: "★ Popular", className: "text-orange-500" },
+};
 
 function PopularityBadge({ score }: { score: number }) {
-  if (score >= 90) return <span className="rounded bg-red-500/10 px-1.5 py-0.5 text-xs font-bold text-red-500">🔥 HOT</span>;
+  const key = String(score);
+  if (popularities[key]) {
+    return <span className={"rounded px-1.5 py-0.5 text-xs font-bold " + popularities[key].className + " bg-current/10"}>{popularities[key].label}</span>;
+  }
   if (score >= 75) return <span className="rounded bg-orange-500/10 px-1.5 py-0.5 text-xs font-medium text-orange-500">★ Popular</span>;
   if (score >= 60) return <span className="rounded bg-blue-500/10 px-1.5 py-0.5 text-xs text-blue-500">● Normal</span>;
   return null;
@@ -16,15 +40,36 @@ function PopularityBadge({ score }: { score: number }) {
 export default function SearchSection() {
   const [query, setQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [data, setData] = useState<SearchApi[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/data.json")
+      .then(r => r.json())
+      .then(json => {
+        setData(json.map((api: any) => ({
+          slug: api.slug,
+          name: api.name,
+          nameCn: api.nameCn,
+          description: api.description,
+          descriptionCn: api.descriptionCn,
+          categoryCn: api.categoryCn,
+          tags: api.tags,
+          popularity: api.popularity,
+        })));
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
 
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
-    apis.forEach(a => a.tags.forEach(t => tagSet.add(t)));
+    data.forEach(a => a.tags.forEach(t => tagSet.add(t)));
     return Array.from(tagSet).sort();
-  }, []);
+  }, [data]);
 
   const filtered = useMemo(() => {
-    let results = [...apis];
+    let results = [...data];
     if (query.trim()) {
       const q = query.toLowerCase();
       results = results.filter(a =>
@@ -40,7 +85,7 @@ export default function SearchSection() {
       results = results.filter(a => selectedTags.some(t => a.tags.includes(t)));
     }
     return results.sort((a, b) => b.popularity - a.popularity);
-  }, [query, selectedTags]);
+  }, [query, selectedTags, data]);
 
   const toggleTag = (tag: string) => {
     setSelectedTags(prev => prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]);
@@ -52,10 +97,11 @@ export default function SearchSection() {
       <div className="relative mb-4">
         <input
           type="text"
-          placeholder="Search APIs by name, description, or tags..."
+          placeholder={loading ? "Loading search..." : "Search APIs by name, description, or tags..."}
           value={query}
           onChange={e => setQuery(e.target.value)}
-          className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 pl-10 text-sm text-[var(--fg)] placeholder-[var(--muted)] outline-none transition-colors focus:border-[var(--accent)]"
+          disabled={loading}
+          className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 pl-10 text-sm text-[var(--fg)] placeholder-[var(--muted)] outline-none transition-colors focus:border-[var(--accent)] disabled:opacity-50"
         />
         <svg className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -68,33 +114,37 @@ export default function SearchSection() {
       </div>
 
       {/* Tag Filters */}
-      <div className="mb-4 flex flex-wrap gap-1.5">
-        {allTags.slice(0, 20).map(tag => (
-          <button
-            key={tag}
-            onClick={() => toggleTag(tag)}
-            className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
-              selectedTags.includes(tag)
-                ? "bg-[var(--accent)] text-white"
-                : "bg-[var(--border)] text-[var(--muted)] hover:text-[var(--fg)]"
-            }`}
-          >
-            {tag}
-          </button>
-        ))}
-        {selectedTags.length > 0 && (
-          <button onClick={() => setSelectedTags([])} className="rounded-full px-2.5 py-1 text-xs text-red-500 hover:bg-red-500/10">
-            Clear filters
-          </button>
-        )}
-      </div>
+      {!loading && (
+        <div className="mb-4 flex flex-wrap gap-1.5">
+          {allTags.slice(0, 20).map(tag => (
+            <button
+              key={tag}
+              onClick={() => toggleTag(tag)}
+              className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
+                selectedTags.includes(tag)
+                  ? "bg-[var(--accent)] text-white"
+                  : "bg-[var(--border)] text-[var(--muted)] hover:text-[var(--fg)]"
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+          {selectedTags.length > 0 && (
+            <button onClick={() => setSelectedTags([])} className="rounded-full px-2.5 py-1 text-xs text-red-500 hover:bg-red-500/10">
+              Clear filters
+            </button>
+          )}
+        </div>
+      )}
 
       {/* Results */}
       {query || selectedTags.length > 0 ? (
         <div>
-          <p className="mb-3 text-xs text-[var(--muted)]">{filtered.length} result{filtered.length !== 1 ? "s" : ""}</p>
+          <p className="mb-3 text-xs text-[var(--muted)]">
+            {loading ? "Loading..." : `${filtered.length} result${filtered.length !== 1 ? "s" : ""}`}
+          </p>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map(api => (
+            {filtered.slice(0, 30).map(api => (
               <Link key={api.slug} href={`/api/${api.slug}`} className="block">
                 <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-3 transition-colors hover:border-[var(--accent)]">
                   <div className="mb-1 flex items-center justify-between">
@@ -118,4 +168,3 @@ export default function SearchSection() {
     </div>
   );
 }
-

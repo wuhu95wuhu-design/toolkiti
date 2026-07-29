@@ -2,7 +2,19 @@
 import Header from "@/components/Header";
 import Logo from "@/components/Logo";
 import ApiCard from "@/components/ApiCard";
-import SearchSection from "@/components/SearchSection";
+import dynamic from "next/dynamic";
+const SearchSection = dynamic(() => import("@/components/SearchSection"), {
+  loading: () => (
+    <div className="relative mb-4">
+      <input
+        type="text"
+        placeholder="Loading search..."
+        disabled
+        className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 pl-10 text-sm text-[var(--fg)] placeholder-[var(--muted)] outline-none disabled:opacity-50"
+      />
+    </div>
+  ),
+});
 import { apis, categories } from "@/data/apis";
 import SupportSection from "@/components/SupportSection";
 
@@ -102,3 +114,5 @@ export default function Home() {
     </>
   );
 }
+
+
