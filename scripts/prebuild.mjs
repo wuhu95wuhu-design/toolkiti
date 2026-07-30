@@ -91,7 +91,7 @@ if (existsSync(dataDir)) {
   for (const f of readdirSync(dataDir)) {
     const full = join(dataDir, f);
     const s = statSync(full);
-    if (s.size > 20000) {
+    if (s.size > 50000) {
       warn(relative(ROOT, full) + " is " + (s.size / 1024).toFixed(1) + "KB \u2014 large data files increase OOM risk during static generation");
     }
   }

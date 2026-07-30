@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { apis, getApiBySlug } from "@/data/apis";
 import { ApiEntry } from "@/lib/types";
 import { extendedData } from "@/data/extended";
+import ThumbsUp from "@/components/ThumbsUp";
 
 export const dynamic = "force-static";
 
