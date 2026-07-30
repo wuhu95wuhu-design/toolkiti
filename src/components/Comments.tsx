@@ -15,9 +15,9 @@ export default function Comments({ slug }: { slug: string }) {
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
     script.setAttribute("data-repo", "wuhu95wuhu-design/toolkiti");
-    script.setAttribute("data-repo-id", ""); // Need to fill after enabling Discussions
-    script.setAttribute("data-category", "Announcements");
-    script.setAttribute("data-category-id", "");
+    script.setAttribute("data-repo-id", "R_kgDOTlHaew"); // Need to fill after enabling Discussions
+    script.setAttribute("data-category", "General");
+    script.setAttribute("data-category-id", "DIC_kwDOTlHaes4Ck1k");
     script.setAttribute("data-mapping", "specific");
     script.setAttribute("data-term", slug);
     script.setAttribute("data-strict", "0");
@@ -37,10 +37,6 @@ export default function Comments({ slug }: { slug: string }) {
   return (
     <div className="mb-8">
       <h2 className="mb-3 text-lg font-semibold">Discussion</h2>
-      <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-center text-sm text-[var(--muted)]">
-        <p>Comments powered by Giscus.</p>
-        <p className="mt-1 text-xs">Requires GitHub Discussions to be enabled on the repository.</p>
-      </div>
       <div ref={ref} />
     </div>
   );
