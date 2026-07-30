@@ -705,5 +705,151 @@ print(result.content)`
   }'`
       }
     ]
-  }
+ },
+
+  cursor: {
+    features: [
+      "Copilot++ for multi-line code suggestions",
+      "Composer for multi-file AI edits",
+      "Codebase-wide context with @ mentions",
+      "Built-in chat with GPT-4o, Claude, and more",
+      "Terminal AI commands and debugging"
+    ],
+    codeExamples: [
+      {
+        title: "Cursor Rules (.cursorrules)",
+        language: "text",
+        code: "You are an expert TypeScript developer. Always use functional components with hooks. Prefer arrow functions. Use zod for runtime validation."
+      }
+    ]
+  },
+  windsurf: {
+    features: [
+      "Cascade agentic flow for complex tasks",
+      "Ultra-fast tab autocomplete",
+      "Inline editing with AI suggestions",
+      "Terminal AI assistance",
+      "Multi-language support with accuracy tuning"
+    ],
+    codeExamples: [
+      {
+        title: "Cascade Prompt (Natural Language)",
+        language: "text",
+        code: "Create a React component that fetches user data from an API, displays it in a table, and includes loading states and error handling."
+      }
+    ]
+  },
+  bolt: {
+    features: [
+      "Full-stack app generation from prompts",
+      "Built-in deployment to production",
+      "Supports React, Vue, Svelte, Next.js",
+      "Real-time preview during development",
+      "Database and API integration built-in"
+    ],
+    codeExamples: [
+      {
+        title: "Prompt Example",
+        language: "text",
+        code: "Build a task management app with a React frontend, PostgreSQL database, user authentication, and drag-and-drop task reordering."
+      }
+    ]
+  },
+  lovable: {
+    features: [
+      "Describe-to-app with Supabase integration",
+      "Instant auth, database, and storage",
+      "Visual preview with live editing",
+      "One-click deployment",
+      "GPT-4 powered app generation"
+    ],
+    codeExamples: [
+      {
+        title: "Prompt Example",
+        language: "text",
+        code: "Create a SaaS landing page with a pricing table, Stripe checkout integration, and a user dashboard."
+      }
+    ]
+  },
+  replit: {
+    features: [
+      "AI Agent builds apps from description",
+      "50+ language support in browser IDE",
+      "One-click deploy to production",
+      "Multiplayer editing and collaboration",
+      "Built-in database and secrets management"
+    ],
+    codeExamples: [
+      {
+        title: "Prompt Example",
+        language: "text",
+        code: "Build a real-time chat application with WebSocket support, user authentication, message history, and file sharing."
+      }
+    ]
+  },
+  runway: {
+    features: [
+      "Gen-3 and Gen-4 video generation models",
+      "Image-to-video and text-to-video",
+      "Video-to-video style transfer",
+      "Green screen and rotoscoping tools",
+      "API for programmatic generation"
+    ],
+    codeExamples: [
+      {
+        title: "Generate Video",
+        language: "bash",
+        code: "curl https://api.runwayml.com/v1/generations \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $RUNWAY_API_KEY\" \\\n  -d '{\n    \"prompt\": \"A cinematic drone shot...\",\n    \"model\": \"gen-4\"\n  }'"
+      }
+    ]
+  },
+  suno: {
+    features: [
+      "Text-to-music with vocals and instruments",
+      "Multiple genres: pop, rock, jazz, electronic",
+      "Custom lyrics or AI-generated lyrics",
+      "Song extension and remixing",
+      "API for programmatic music generation"
+    ],
+    codeExamples: [
+      {
+        title: "Generate Song",
+        language: "bash",
+        code: "curl https://api.suno.com/v1/generate \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $SUNO_API_KEY\" \\\n  -d '{\n    \"prompt\": \"An upbeat pop song...\",\n    \"style\": \"pop\",\n    \"instrumental\": false\n  }'"
+      }
+    ]
+  },
+  youcom: {
+    features: [
+      "AI-powered web search results",
+      "Real-time news and data",
+      "LLM chat integration",
+      "Image and video search support",
+      "Developer-friendly API"
+    ],
+    codeExamples: [
+      {
+        title: "Web Search",
+        language: "bash",
+        code: "curl \"https://api.you.com/v1/search?query=latest+AI+news\" \\\n  -H \"X-API-Key: $YOU_API_KEY\" \\\n  -H \"Accept: application/json\""
+      }
+    ]
+  },
+  "vercel-ai-sdk": {
+    features: [
+      "Streaming responses with React Server Components",
+      "Tool calling and function calling",
+      "Multi-provider support (OpenAI, Anthropic, etc.)",
+      "AI SDK Core for framework-agnostic use",
+      "Production-ready with edge deployment"
+    ],
+    codeExamples: [
+      {
+        title: "Streaming Chat with Next.js",
+        language: "typescript",
+        code: "import { streamText } from 'ai';\nimport { openai } from '@ai-sdk/openai';\n\nexport async function POST(req: Request) {\n  const { messages } = await req.json();\n  const result = streamText({\n    model: openai('gpt-4o'),\n    messages,\n  });\n  return result.toDataStreamResponse();\n}"
+      }
+    ]
+  },
+
 };
