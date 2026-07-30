@@ -2,8 +2,15 @@
 
 // Extended data: code examples, features, performance metrics
 // Keyed by API slug, merged at display time
-export const extendedData: Record<string, Partial<Pick<ApiEntry, "codeExamples" | "features" | "rateLimit" | "latency" | "maxTokens">>> = {
+export const extendedData: Record<string, Partial<Pick<ApiEntry, "codeExamples" | "features" | "rateLimit" | "latency" | "maxTokens" | "usageTips" | "sponsored">>> = {
   openai: {
+    sponsored: true,
+    usageTips: [
+      "Use gpt-4o for complex reasoning, gpt-4o-mini for simple tasks to save cost",
+      "Set max_tokens to control response length and cost",
+      "Use streaming for real-time chat experiences",
+      "Store API keys in environment variables, never in code"
+    ],
     rateLimit: "10000 req/min (varies by tier)",
     latency: "<500ms (GPT-4o)",
     maxTokens: "128K (GPT-4o)",
@@ -40,6 +47,11 @@ print(response.choices[0].message.content)`
     ]
   },
   anthropic: {
+    usageTips: [
+      "Claude excels at long-form writing and analysis with 200K context",
+      "Use the extended thinking mode for complex problem-solving",
+      "System prompts work best when they are specific and structured"
+    ],
     rateLimit: "4000 req/min (Tier 4)",
     latency: "<800ms (Claude 3.5 Sonnet)",
     maxTokens: "200K",
@@ -278,6 +290,12 @@ for chunk in output:
     ]
   },
   tavily: {
+    sponsored: true,
+    usageTips: [
+      "Use topic-based search for more relevant results",
+      "Combine with RAG for fact-checking AI responses",
+      "Free tier gives 1000 credits/month - enough for prototyping"
+    ],
     rateLimit: "100 req/day (free tier)",
     latency: "<1s",
     features: [

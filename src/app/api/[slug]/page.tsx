@@ -6,6 +6,8 @@ import { apis, getApiBySlug } from "@/data/apis";
 import { ApiEntry } from "@/lib/types";
 import { extendedData } from "@/data/extended";
 import ThumbsUp from "@/components/ThumbsUp";
+import PricingCompare from "@/components/PricingCompare";
+import Comments from "@/components/Comments";
 
 export const dynamic = "force-static";
 
@@ -161,6 +163,27 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           </div>
         )}
 
+        {apiWithExt.usageTips && apiWithExt.usageTips.length > 0 && (
+          <div className="mb-8">
+            <h2 className="mb-3 text-lg font-semibold">Usage Tips</h2>
+            <ul className="space-y-2">
+              {apiWithExt.usageTips.map((tip, i) => (
+                <li key={i} className="flex items-start gap-2 rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-sm">
+                  <span className="mt-0.5 shrink-0 text-yellow-500">💡</span>
+                  {tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {apiWithExt.sponsored && (
+          <div className="mb-8 rounded-lg border border-yellow-500/30 bg-yellow-500/5 p-4 text-center text-sm">
+            <span className="inline-block rounded bg-yellow-500/20 px-2 py-0.5 text-xs font-semibold text-yellow-500">SPONSORED</span>
+            <p className="mt-1 text-[var(--muted)]">This API listing is sponsored. Content is independently maintained.</p>
+          </div>
+        )}
+
         {apiWithExt.codeExamples && apiWithExt.codeExamples.length > 0 && (
           <div className="mb-8">
             <h2 className="mb-3 text-lg font-semibold">Code Examples</h2>
@@ -231,6 +254,9 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           </p>
         </div>
 
+        {/* Pricing Comparison */}
+        <PricingCompare slug={api.slug} category={api.category} />
+
         {api.referralUrl && (
           <div className="mt-8 rounded-lg border border-[var(--border)] bg-[var(--card)] p-6 text-center">
             <h3 className="mb-2 text-lg font-semibold">Get Started with {api.name}</h3>
@@ -241,6 +267,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
             </a>
           </div>
         )}
+        <Comments slug={api.slug} />
       </main>
     </>
   );
