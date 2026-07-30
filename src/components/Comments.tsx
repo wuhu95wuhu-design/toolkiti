@@ -14,7 +14,6 @@ export default function Comments({ slug }: { slug: string }) {
     script.src = "https://giscus.app/client.js";
     script.setAttribute("data-repo", "wuhu95wuhu-design/toolkiti");
     script.setAttribute("data-repo-id", "R_kgDOTlHaew");
-    script.setAttribute("data-category", "Announcements");
     script.setAttribute("data-mapping", "specific");
     script.setAttribute("data-term", slug);
     script.setAttribute("data-reactions-enabled", "1");
