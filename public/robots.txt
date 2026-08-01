@@ -1,23 +1,7 @@
 ﻿User-agent: *
 Allow: /
+Allow: /api/v1/
+Allow: /api/data
+Allow: /api/ai.txt
+
 Sitemap: https://toolkiti.org/sitemap.xml
-
-# AI crawlers welcome
-User-agent: GPTBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GPTBot
-Allow: /api/ai.txt
-
-User-agent: Claude-Web
-Allow: /api/ai.txt
-
-User-agent: Google-Extended
-Allow: /api/ai.txt
-

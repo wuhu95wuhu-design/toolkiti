@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Logo from "@/components/Logo";
 import ApiCard from "@/components/ApiCard";
 import TopPicks from "@/components/TopPicks";
+import SponsoredApiOfWeek from "@/components/SponsoredApiOfWeek";
+import PremiumDataTeaser from "@/components/PremiumDataTeaser";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import dynamic from "next/dynamic";
 const SearchSection = dynamic(() => import("@/components/SearchSection"), {
@@ -63,6 +65,9 @@ export default function Home() {
 
         {/* Ad Banner */}
         <AdBanner />
+
+        {/* API of the Week */}
+        <SponsoredApiOfWeek />
 
         {/* Stats */}
         <section className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -168,9 +173,15 @@ export default function Home() {
             <a href="/robots.txt" className="underline">robots.txt</a>
             <a href="/llms.txt" className="underline">llms.txt</a>
             <a href="/llms-full.txt" className="underline">llms-full.txt</a>
+            <a href="/openapi.json" className="underline">openapi.json</a>
+            <a href="/.well-known/ai-plugin.json" className="underline">ai-plugin.json</a>
+            <a href="/llms.txt" className="underline">llms.txt</a>
+            <a href="/llms-full.txt" className="underline">llms-full.txt</a>
             <a href="/sitemap.xml" className="underline">sitemap.xml</a>
           </div>
         </section>
+
+        <PremiumDataTeaser />
 
         <SupportSection />
       </main>

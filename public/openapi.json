@@ -1,0 +1,46 @@
+﻿{
+  "openapi": "3.0.0",
+  "info": { "title": "ToolKiti API", "version": "1.0.0", "description": "Structured API directory for AI agents. Search, compare, and get details on 100+ AI/LLM/cloud APIs." },
+  "servers": [{ "url": "https://toolkiti.org" }],
+  "paths": {
+    "/api/v1/tools/search": {
+      "get": {
+        "operationId": "searchTools",
+        "summary": "Search API tools by keyword or category",
+        "parameters": [
+          { "name": "q", "in": "query", "description": "Search query (e.g. image generation, llm)", "schema": { "type": "string" } },
+          { "name": "category", "in": "query", "description": "Filter by category slug", "schema": { "type": "string" } },
+          { "name": "limit", "in": "query", "description": "Max results (default 20)", "schema": { "type": "integer" } }
+        ],
+        "responses": { "200": { "description": "Search results with tool metadata" } }
+      }
+    },
+    "/api/v1/tools/compare": {
+      "get": {
+        "operationId": "compareTools",
+        "summary": "Side-by-side comparison of multiple API tools",
+        "parameters": [
+          { "name": "ids", "in": "query", "required": true, "description": "Comma-separated slugs (e.g. openai,anthropic)", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Structured comparison data" } }
+      }
+    },
+    "/api/v1/tools/{slug}": {
+      "get": {
+        "operationId": "getToolDetail",
+        "summary": "Full specification for a single API tool",
+        "parameters": [
+          { "name": "slug", "in": "path", "required": true, "description": "Tool slug (e.g. openai, stripe)", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Complete tool spec with curl examples" } }
+      }
+    },
+    "/api/v1/tools/categories": {
+      "get": {
+        "operationId": "getCategories",
+        "summary": "List all API categories with counts",
+        "responses": { "200": { "description": "Category list" } }
+      }
+    }
+  }
+}

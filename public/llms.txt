@@ -1,73 +1,26 @@
-﻿# ToolKiti - API & Tool Reference for AI Agents
+﻿# ToolKiti - AI API & Tool Directory
+> Structured, machine-readable API references for AI agents and developers.
 
-> A structured, machine-readable directory of 32 APIs, tools, and services. Designed for AI agents and developers. Every API page now includes code examples, key features, rate limits, latency, and a comparison tool.
+## Core Resources
+- JSON API: https://toolkiti.org/api/v1/tools (100 APIs, 13 categories)
+- Search API: https://toolkiti.org/api/v1/tools/search?q={query}
+- Compare API: https://toolkiti.org/api/v1/tools/compare?ids=slug1,slug2
+- Detail API: https://toolkiti.org/api/v1/tools/{slug}
+- Categories: https://toolkiti.org/api/v1/tools/categories
+- Full dataset: https://toolkiti.org/api/data
+- AI-optimized index: https://toolkiti.org/api/ai.txt
 
-## Summary
-ToolKiti indexes the most frequently called AI APIs and developer tools with structured metadata, pricing, endpoints, SDKs, authentication info, code examples, and performance metrics. Every page has JSON-LD structured data. Content is static HTML, no JavaScript required. Built with Next.js SSR + Cloudflare CDN.
+## Content Pages
+- Free API Guide: https://toolkiti.org/free-tier (20 free AI APIs)
+- Error Code DB: https://toolkiti.org/error-codes (15 common API errors with curl)
+- MCP Servers: https://toolkiti.org/mcp-servers (15 MCP servers)
+- Agent Stacks: https://toolkiti.org/agent-stacks (4 production agent templates)
+- Blog: https://toolkiti.org/blog (API comparisons & guides)
+- Sponsor: https://toolkiti.org/sponsor
 
-## Features
-- Full dataset (JSON, with code examples): https://toolkiti.org/api/data.json
-- Compare APIs side by side: https://toolkiti.org/compare
-- Full text search across all APIs: Available on homepage
-- Bilingual: English (primary) and Chinese
-- Popularity scores (1-100) indicate real-world usage frequency
-- All pages include Schema.org SoftwareApplication JSON-LD
-
-## API Data (JSON & Text)
-- LLM-optimized text: https://toolkiti.org/api/ai.txt  
-- Full dataset with code examples: https://toolkiti.org/api/data.json
-
-## Categories
-- LLM Providers (9 APIs): https://toolkiti.org/category/llm
-- Web Search (6 APIs): https://toolkiti.org/category/search
-- Image Generation (4 APIs): https://toolkiti.org/category/image
-- Vector Databases (3 APIs): https://toolkiti.org/category/vector-db
-- Audio & Speech (2 APIs): https://toolkiti.org/category/audio
-- Machine Learning (2 APIs): https://toolkiti.org/category/ml
-- GPU Cloud (2 APIs): https://toolkiti.org/category/cloud-gpu
-- Developer Tools (4 APIs): https://toolkiti.org/category/tools
-
-## All APIs (32 total)
-- OpenAI: https://toolkiti.org/api/openai
-- Anthropic Claude: https://toolkiti.org/api/anthropic
-- Google Gemini: https://toolkiti.org/api/google-gemini
-- DeepSeek: https://toolkiti.org/api/deepseek
-- Mistral AI: https://toolkiti.org/api/mistral
-- Cohere: https://toolkiti.org/api/cohere
-- Groq: https://toolkiti.org/api/groq
-- Together AI: https://toolkiti.org/api/together-ai
-- Replicate: https://toolkiti.org/api/replicate
-- Tavily Search: https://toolkiti.org/api/tavily
-- Brave Search: https://toolkiti.org/api/brave-search
-- Serper: https://toolkiti.org/api/serper
-- Jina AI: https://toolkiti.org/api/jina-ai
-- Exa Search: https://toolkiti.org/api/exa
-- Firecrawl: https://toolkiti.org/api/firecrawl
-- Stability AI: https://toolkiti.org/api/stability-ai
-- Midjourney: https://toolkiti.org/api/midjourney
-- Leonardo AI: https://toolkiti.org/api/leonardo-ai
-- Ideogram: https://toolkiti.org/api/ideogram
-- ElevenLabs: https://toolkiti.org/api/elevenlabs
-- AssemblyAI: https://toolkiti.org/api/assemblyai
-- Hugging Face: https://toolkiti.org/api/huggingface
-- Perplexity: https://toolkiti.org/api/perplexity
-- Pinecone: https://toolkiti.org/api/pinecone
-- Weaviate: https://toolkiti.org/api/weaviate
-- Qdrant: https://toolkiti.org/api/qdrant
-- Modal: https://toolkiti.org/api/modal
-- RunPod: https://toolkiti.org/api/runpod
-- LangChain: https://toolkiti.org/api/langchain
-- GitHub API: https://toolkiti.org/api/github-api
-- Supabase: https://toolkiti.org/api/supabase
-- Resend: https://toolkiti.org/api/resend
-
-## Notes for AI Crawlers
-- Every page includes JSON-LD structured data with Schema.org WebSite and SoftwareApplication types
-- Code examples available in curl, Python, and other languages on each detail page
-- API comparison tool at /compare for side-by-side evaluation
-- Content is static HTML, no JavaScript required
-- Fast CDN delivery via Vercel + Cloudflare
-- Bilingual: English (primary) and Chinese
-- Popularity scores (1-100) indicate how frequently each API is called
-- All API data also available as JSON at /api/data.json with code examples and performance metrics
-
+## Site Info
+- Language: EN/ZH bilingual
+- Updated: 2026-08-01
+- APIs: 100 across 13 categories
+- Code examples: curl, Python, Node.js
+- Structured data: JSON-LD on every page
