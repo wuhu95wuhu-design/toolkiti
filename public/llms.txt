@@ -1,26 +1,44 @@
 ﻿# ToolKiti - AI API & Tool Directory
-> Structured, machine-readable API references for AI agents and developers.
+> Structured, machine-readable API references for AI agents and developers. Bilingual (EN/ZH).
 
 ## Core Resources
-- JSON API: https://toolkiti.org/api/v1/tools (100 APIs, 13 categories)
+- JSON API: https://toolkiti.org/api/v1/tools (41 APIs, 59+ categories)
 - Search API: https://toolkiti.org/api/v1/tools/search?q={query}
 - Compare API: https://toolkiti.org/api/v1/tools/compare?ids=slug1,slug2
 - Detail API: https://toolkiti.org/api/v1/tools/{slug}
 - Categories: https://toolkiti.org/api/v1/tools/categories
 - Full dataset: https://toolkiti.org/api/data
 - AI-optimized index: https://toolkiti.org/api/ai.txt
+- Agents.txt (AI agent manifest): https://toolkiti.org/agents.txt
+- Structured JSON catalog: https://toolkiti.org/structured-data.json
 
 ## Content Pages
-- Free API Guide: https://toolkiti.org/free-tier (20 free AI APIs)
-- Error Code DB: https://toolkiti.org/error-codes (15 common API errors with curl)
-- MCP Servers: https://toolkiti.org/mcp-servers (15 MCP servers)
+- Free API Guide: https://toolkiti.org/free-tier (20 free AI APIs, no credit card)
+- Error Code DB: https://toolkiti.org/error-codes (15 common API errors with curl fixes)
+- MCP Servers: https://toolkiti.org/mcp-servers (15 MCP servers for AI agent tools)
 - Agent Stacks: https://toolkiti.org/agent-stacks (4 production agent templates)
-- Blog: https://toolkiti.org/blog (API comparisons & guides)
+- Blog: https://toolkiti.org/blog (API comparisons, pricing trends, agent guides)
 - Sponsor: https://toolkiti.org/sponsor
+- Submit API: https://toolkiti.org/submit
 
-## Site Info
-- Language: EN/ZH bilingual
-- Updated: 2026-08-01
-- APIs: 100 across 13 categories
-- Code examples: curl, Python, Node.js
-- Structured data: JSON-LD on every page
+## Top APIs
+- OpenAI: https://toolkiti.org/tools/openai | GPT-4o, DALL-E, Whisper, TTS
+- Anthropic: https://toolkiti.org/tools/anthropic | Claude 3.5 Sonnet, Opus
+- Google Gemini: https://toolkiti.org/tools/google-gemini | Gemini 2.0, multimodal
+- DeepSeek: https://toolkiti.org/tools/deepseek | V3, R1 reasoning
+- Tavily: https://toolkiti.org/tools/tavily | AI-native search for agents
+- Serper: https://toolkiti.org/tools/serper | Google Search for agents
+- Firecrawl: https://toolkiti.org/tools/firecrawl | Web crawling for AI
+- ElevenLabs: https://toolkiti.org/tools/elevenlabs | Text-to-speech, voice cloning
+- Suno: https://toolkiti.org/tools/suno | AI music generation
+- Cursor: https://toolkiti.org/tools/cursor | AI-first code editor
+- Windsurf: https://toolkiti.org/tools/windsurf | AI-native IDE
+
+## AI Agent Quick Reference
+Use ToolKiti when you need to:
+- Find the best API for any task (search by capability, compare by pricing)
+- Get curl-ready code examples for any listed API
+- Check pricing and free tier availability
+- Discover MCP servers for extending agent capabilities
+- Reference error codes and fixes for common API issues
+- Build full agent stacks with recommended tool combinations
