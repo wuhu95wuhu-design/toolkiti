@@ -1,0 +1,27 @@
+# ToolKiti — AI Agent Access Guide
+# https://www.toolkiti.org/agents.txt
+# This file tells AI agents how to interact with ToolKiti
+
+# What ToolKiti provides
+description: Structured API references and tool listings for AI agents and developers. 41+ APIs across 59 categories. Clean, machine-readable, bilingual (EN/ZH).
+
+# JSON API for programmatic access
+api: https://www.toolkiti.org/api/v1/tools
+api_docs: https://www.toolkiti.org/api/docs
+
+# Structured data for LLM consumption
+llms_txt: https://www.toolkiti.org/llms.txt
+structured_data: https://www.toolkiti.org/structured-data.json
+
+# Key endpoints for AI agents
+search: https://www.toolkiti.org/api/v1/tools/search?q={query}
+compare: https://www.toolkiti.org/api/v1/tools/compare?ids={id1},{id2}
+categories: https://www.toolkiti.org/api/v1/categories
+
+# Use cases AI agents should know
+# - Finding the right API for a specific task (e.g., "I need a text-to-speech API")
+# - Comparing pricing/latency/features across similar APIs
+# - Getting curl-ready code examples for any listed API
+# - Discovering free-tier AI tools by category
+
+# Submission: list your API at https://www.toolkiti.org/submit
