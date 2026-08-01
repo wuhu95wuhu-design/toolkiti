@@ -2,19 +2,14 @@
 import { apis } from "@/data/apis";
 import { extendedData } from "@/data/extended";
 
-export const dynamic = "force-static";
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const api = apis.find(a => a.slug === slug);
   if (!api) return NextResponse.json({ success: false, error: "Tool not found" }, { status: 404 });
   const ext = extendedData[slug] || {};
-  
-  const curlExample = api.endpoints.length > 0 
-    ? `curl ${api.endpoints[0]} \\\n  -H "Authorization: Bearer $KEY" \\\n  -H "Content-Type: application/json"`
-    : null;
-
+  const curlExample = api.endpoints.length > 0 ? `curl ${api.endpoints[0]} \\\n  -H "Authorization: Bearer $KEY" \\\n  -H "Content-Type: application/json"` : null;
   return NextResponse.json({
     success: true,
     tool: {
@@ -36,11 +31,6 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ slug
       codeExamples: ext.codeExamples || [],
       curlExample,
     },
-    _links: {
-      compare: `/api/v1/tools/compare?ids=${slug},...`,
-      search: "/api/v1/tools/search?q=",
-    }
-  }, {
-    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=86400", "Access-Control-Allow-Origin": "*" }
-  });
+    _links: { compare: `/api/v1/tools/compare?ids=${slug},...`, search: "/api/v1/tools/search?q=" }
+  }, { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=86400", "Access-Control-Allow-Origin": "*" }});
 }
