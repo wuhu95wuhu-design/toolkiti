@@ -21,7 +21,7 @@ export default function ApiCard({ api }: { api: ApiEntry }) {
     <div className="group rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 transition-all hover:border-[var(--accent)] hover:shadow-sm">
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href={`/api/${api.slug}`} className="font-semibold hover:text-[var(--accent)]">{api.name}</Link>
+          <Link href={`/api/${api.slug}`} className="font-semibold text-[var(--fg)] hover:text-[var(--accent)]">{api.name}</Link>
           <PopularityBadge score={api.popularity} />
         </div>
         <span className={`h-2 w-2 rounded-full ${statusColors[api.status]}`} title={api.status} />

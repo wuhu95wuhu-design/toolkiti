@@ -57,8 +57,8 @@ export default function Home() {
             Clean, machine-readable, bilingual.
           </p>
           <div className="mt-4 flex justify-center gap-3">
-            <Link href="/compare" className="rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-2 text-sm transition-colors hover:border-[var(--accent)]">Compare APIs</Link>
-            <Link href="/blog" className="rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-2 text-sm transition-colors hover:border-[var(--accent)]">Blog</Link>
+            <Link href="/compare" className="rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-2 text-sm text-[var(--fg)] transition-colors hover:border-[var(--accent)]">Compare APIs</Link>
+            <Link href="/blog" className="rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-2 text-sm text-[var(--fg)] transition-colors hover:border-[var(--accent)]">Blog</Link>
             <Link href="/submit" className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90">+ Submit API</Link>
           </div>
         </section>
