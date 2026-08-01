@@ -1,0 +1,41 @@
+{
+  "site": {
+    "name": "ToolKiti",
+    "url": "https://www.toolkiti.org",
+    "description": "Structured API references and tool listings for AI agents and developers. Bilingual (EN/ZH).",
+    "language": ["en", "zh"],
+    "version": "1.0"
+  },
+  "api": {
+    "base_url": "https://www.toolkiti.org/api/v1",
+    "endpoints": {
+      "list_tools": "/tools",
+      "search_tools": "/tools/search?q={query}",
+      "get_tool": "/tools/{slug}",
+      "compare_tools": "/tools/compare?ids={id1},{id2}",
+      "list_categories": "/categories"
+    }
+  },
+  "stats": {
+    "total_apis": 41,
+    "total_categories": 59,
+    "try_it_links": 32
+  },
+  "categories": [
+    {"id": "llm", "name": "LLM Providers", "name_zh": "大语言模型", "count": 9},
+    {"id": "ml", "name": "Machine Learning", "name_zh": "机器学习", "count": 2},
+    {"id": "image-gen", "name": "Image Generation", "name_zh": "图像生成", "count": 5},
+    {"id": "audio", "name": "Audio & Speech", "name_zh": "音频语音", "count": 3},
+    {"id": "vector-db", "name": "Vector Databases", "name_zh": "向量数据库", "count": 3},
+    {"id": "gpu", "name": "GPU Cloud", "name_zh": "GPU 云", "count": 2},
+    {"id": "dev-tools", "name": "Developer Tools", "name_zh": "开发工具", "count": 8},
+    {"id": "web-search", "name": "Web Search", "name_zh": "搜索服务", "count": 7},
+    {"id": "ai-ide", "name": "AI IDE", "name_zh": "AI 编辑器", "count": 2}
+  ],
+  "agents": {
+    "agents_txt": "https://www.toolkiti.org/agents.txt",
+    "llms_txt": "https://www.toolkiti.org/llms.txt",
+    "structured_data": "https://www.toolkiti.org/structured-data.json",
+    "sitemap": "https://www.toolkiti.org/sitemap.xml"
+  }
+}
