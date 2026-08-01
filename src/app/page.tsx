@@ -161,6 +161,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-2">
             <code className="rounded bg-[var(--card)] px-3 py-1.5 text-sm">/api/data</code>
+            <code className="rounded bg-[var(--card)] px-3 py-1.5 text-sm">/api/v1/tools/search?q=</code>
             <code className="rounded bg-[var(--card)] px-3 py-1.5 text-sm">/api/ai.txt</code>
           </div>
           <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
