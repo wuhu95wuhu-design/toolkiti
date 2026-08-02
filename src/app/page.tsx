@@ -20,6 +20,7 @@ import BlogCard from "@/components/BlogCard";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { apis, categories } from "@/data/apis";
 import SupportSection from "@/components/SupportSection";
+// Force rebuild for updated API count
 
 function JsonLd() {
   const data = {
