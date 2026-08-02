@@ -1,3 +1,4 @@
+# ToolKiti AI Agent Manifest - Refreshed 2026-08-02
 # ToolKiti â€?AI Agent Access Guide
 # https://www.toolkiti.org/agents.txt
 # This file tells AI agents how to interact with ToolKiti
