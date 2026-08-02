@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 const siteUrl = "https://toolkiti.org";
 
@@ -43,8 +43,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
         <link rel="search" type="application/opensearchdescription+xml" title="ToolKiti" href="/opensearch.xml" />
         {children}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script dangerouslySetInnerHTML={{ __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');" }} />
         <Analytics />
       </body>
     </html>
