@@ -1,7 +1,11 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
+Allow: /api/
 Allow: /api/v1/
 Allow: /api/data
 Allow: /api/ai.txt
+Crawl-delay: 0
 
 Sitemap: https://toolkiti.org/sitemap.xml
+Sitemap: https://toolkiti.org/llms.txt
+Sitemap: https://toolkiti.org/llms-full.txt

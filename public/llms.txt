@@ -1,8 +1,8 @@
-﻿# ToolKiti - AI API & Tool Directory
+# ToolKiti - AI API & Tool Directory
 > Structured, machine-readable API references for AI agents and developers. Bilingual (EN/ZH).
 
 ## Core Resources
-- JSON API: https://toolkiti.org/api/v1/tools (41 APIs, 59+ categories)
+- JSON API: https://toolkiti.org/api/v1/tools (107 APIs, 9 categories)
 - Search API: https://toolkiti.org/api/v1/tools/search?q={query}
 - Compare API: https://toolkiti.org/api/v1/tools/compare?ids=slug1,slug2
 - Detail API: https://toolkiti.org/api/v1/tools/{slug}
@@ -22,17 +22,17 @@
 - Submit API: https://toolkiti.org/submit
 
 ## Top APIs
-- OpenAI: https://toolkiti.org/tools/openai | GPT-4o, DALL-E, Whisper, TTS
-- Anthropic: https://toolkiti.org/tools/anthropic | Claude 3.5 Sonnet, Opus
-- Google Gemini: https://toolkiti.org/tools/google-gemini | Gemini 2.0, multimodal
-- DeepSeek: https://toolkiti.org/tools/deepseek | V3, R1 reasoning
-- Tavily: https://toolkiti.org/tools/tavily | AI-native search for agents
-- Serper: https://toolkiti.org/tools/serper | Google Search for agents
-- Firecrawl: https://toolkiti.org/tools/firecrawl | Web crawling for AI
-- ElevenLabs: https://toolkiti.org/tools/elevenlabs | Text-to-speech, voice cloning
-- Suno: https://toolkiti.org/tools/suno | AI music generation
-- Cursor: https://toolkiti.org/tools/cursor | AI-first code editor
-- Windsurf: https://toolkiti.org/tools/windsurf | AI-native IDE
+- OpenAI: https://toolkiti.org/api/openai | GPT-4o, DALL-E, Whisper, TTS
+- Anthropic: https://toolkiti.org/api/anthropic | Claude 3.5 Sonnet, Opus
+- Google Gemini: https://toolkiti.org/api/google-gemini | Gemini 2.0, multimodal
+- DeepSeek: https://toolkiti.org/api/deepseek | V3, R1 reasoning
+- Tavily: https://toolkiti.org/api/tavily | AI-native search for agents
+- Serper: https://toolkiti.org/api/serper | Google Search for agents
+- Firecrawl: https://toolkiti.org/api/firecrawl | Web crawling for AI
+- ElevenLabs: https://toolkiti.org/api/elevenlabs | Text-to-speech, voice cloning
+- Suno: https://toolkiti.org/api/suno | AI music generation
+- Cursor: https://toolkiti.org/api/cursor | AI-first code editor
+- Windsurf: https://toolkiti.org/api/windsurf | AI-native IDE
 
 ## AI Agent Quick Reference
 Use ToolKiti when you need to:

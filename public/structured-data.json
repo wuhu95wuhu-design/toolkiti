@@ -1,4 +1,4 @@
-{
+﻿{
   "site": {
     "name": "ToolKiti",
     "url": "https://www.toolkiti.org",
@@ -13,12 +13,12 @@
       "search_tools": "/tools/search?q={query}",
       "get_tool": "/tools/{slug}",
       "compare_tools": "/tools/compare?ids={id1},{id2}",
-      "list_categories": "/categories"
+      "list_categories": "/tools/categories"
     }
   },
   "stats": {
-    "total_apis": 41,
-    "total_categories": 59,
+    "total_apis": 107,
+    "total_categories": 9,
     "try_it_links": 32
   },
   "categories": [
@@ -33,9 +33,9 @@
     {"id": "ai-ide", "name": "AI IDE", "name_zh": "AI 编辑器", "count": 2}
   ],
   "agents": {
-    "agents_txt": "https://www.toolkiti.org/agents.txt",
-    "llms_txt": "https://www.toolkiti.org/llms.txt",
-    "structured_data": "https://www.toolkiti.org/structured-data.json",
-    "sitemap": "https://www.toolkiti.org/sitemap.xml"
+    "agents_txt": "https://toolkiti.org/agents.txt",
+    "llms_txt": "https://toolkiti.org/llms.txt",
+    "structured_data": "https://toolkiti.org/structured-data.json",
+    "sitemap": "https://toolkiti.org/sitemap.xml"
   }
 }

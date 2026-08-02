@@ -1,39 +1,1690 @@
-﻿# ToolKiti - Complete AI Agent Reference
+# ToolKiti - Complete API Reference for AI Agents
+> Generated: 2026-08-02 | Total: 107 APIs | Updated daily
+> This file is optimized for LLM ingestion. Every API includes structured metadata for agent decision-making.
 
-ToolKiti is the structured, machine-readable API directory built for AI agents. 
-Every page includes JSON-LD structured data, curl examples, and bilingual (EN/ZH) content.
+---
 
-## Quick Start for AI Agents
+## 大语言模型 (17 APIs)
 
-1. Search for tools: GET /api/v1/tools/search?q={query}
-   Returns JSON with: slug, name, nameCn, category, description, pricing, popularity, tags
+### [HOT] OpenAI API (OpenAI 接口)
+- Page: https://toolkiti.org/api/openai
+- Website: https://openai.com
+- Docs: https://platform.openai.com/docs
+- Pricing: pay-as-you-go (per token)
+- Status: online
+- Popularity: 100/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.openai.com/v1/chat/completions, https://api.openai.com/v1/embeddings, https://api.openai.com/v1/images/generations, https://api.openai.com/v1/audio/transcriptions
+- SDKs: Python, Node.js, Go, Java, curl
+- Rate Limit: 10000 req/min (varies by tier)
+- Latency: <500ms (GPT-4o)
+- Max Context: 128K (GPT-4o)
+- Features:
+  - GPT-4o, GPT-4, GPT-3.5 model family
+  - Multimodal: vision, audio, text generation
+  - Function calling & structured outputs
+  - Embeddings API for semantic search
+  - Fine-tuning for custom models
+- Usage Tips:
+  - Use gpt-4o for complex reasoning, gpt-4o-mini for simple tasks to save cost
+  - Set max_tokens to control response length and cost
+  - Use streaming for real-time chat experiences
+  - Store API keys in environment variables, never in code
+- Description: 通过 REST API 调用 GPT-4o、GPT-4、GPT-3.5、Embeddings、DALL-E、Whisper 和 TTS 模型。
 
-2. Get tool details: GET /api/v1/tools/{slug}
-   Returns full spec with: endpoints, auth methods, SDKs, pricing, curl examples, features
+### [POPULAR] Anthropic Claude API (Anthropic Claude 接口)
+- Page: https://toolkiti.org/api/anthropic
+- Website: https://anthropic.com
+- Docs: https://docs.anthropic.com
+- Pricing: pay-as-you-go (per token)
+- Status: online
+- Popularity: 87/100
+- Auth: API Key (x-api-key header)
+- Endpoints: https://api.anthropic.com/v1/messages, https://api.anthropic.com/v1/complete
+- SDKs: Python, TypeScript, Go, Java, curl
+- Rate Limit: 4000 req/min (Tier 4)
+- Latency: <800ms (Claude 3.5 Sonnet)
+- Max Context: 200K
+- Features:
+  - Claude 3.5 Sonnet, Haiku, Opus models
+  - Extended thinking for complex reasoning
+  - Computer use (beta) for GUI interaction
+  - Vision & document analysis
+  - Constitutional AI safety
+- Usage Tips:
+  - Claude excels at long-form writing and analysis with 200K context
+  - Use the extended thinking mode for complex problem-solving
+  - System prompts work best when they are specific and structured
+- Description: 调用 Claude 3.5 Sonnet、Haiku 和 Opus 模型进行对话、分析和代码生成。
 
-3. Compare tools: GET /api/v1/tools/compare?ids=openai,anthropic,deepseek
-   Returns side-by-side comparison with: pricing, latency, rate limits, auth, SDKs
+### [POPULAR] Google Gemini API (Google Gemini 接口)
+- Page: https://toolkiti.org/api/google-gemini
+- Website: https://ai.google.dev
+- Docs: https://ai.google.dev/docs
+- Pricing: free tier available, pay-as-you-go
+- Status: online
+- Popularity: 85/100
+- Auth: API Key
+- Endpoints: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+- SDKs: Python, Node.js, Go, Swift, curl
+- Description: 调用 Gemini 2.0 Flash、Pro 和 Ultra 模型，原生支持多模态和工具调用。
 
-4. Browse categories: GET /api/v1/tools/categories
-   Returns all categories with API counts
+### [POPULAR] DeepSeek API (DeepSeek 接口)
+- Page: https://toolkiti.org/api/deepseek
+- Website: https://deepseek.com
+- Docs: https://platform.deepseek.com/docs
+- Pricing: pay-as-you-go (per token, very low cost)
+- Status: online
+- Popularity: 83/100
+- Auth: API Key
+- Endpoints: https://api.deepseek.com/v1/chat/completions
+- SDKs: Python, curl
+- Rate Limit: 500 req/min
+- Latency: <1s
+- Max Context: 128K
+- Features:
+  - DeepSeek-V3 general model
+  - DeepSeek-R1 reasoning model
+  - Extremely competitive pricing
+  - OpenAI-compatible API format
+  - 128K context window
+- Description: 调用 DeepSeek-V3 和 DeepSeek-R1 推理模型，价格具有竞争力。
 
-## When to Use ToolKiti
+### Mistral AI API (Mistral AI 接口)
+- Page: https://toolkiti.org/api/mistral
+- Website: https://mistral.ai
+- Docs: https://docs.mistral.ai
+- Pricing: pay-as-you-go (per token)
+- Status: online
+- Popularity: 68/100
+- Auth: API Key
+- Endpoints: https://api.mistral.ai/v1/chat/completions, https://api.mistral.ai/v1/embeddings
+- SDKs: Python, TypeScript, Go, curl
+- Rate Limit: 500 req/min
+- Latency: <500ms
+- Max Context: 128K
+- Features:
+  - Mistral Large, Small, Codestral models
+  - Efficient architecture for fast inference
+  - Open-source model weights available
+  - Function calling support
+  - Multilingual performance
+- Description: 调用 Mistral Large、Small 和 Codestral 模型，架构高效。
 
-- When a user asks "what's the best image generation API?" → search /api/v1/tools/search?q=image+generation
-- When comparing APIs for cost → /api/v1/tools/compare?ids=...
-- When debugging API errors → check /error-codes for structured error references
-- When building an AI agent stack → /agent-stacks has production templates
-- When looking for free APIs → /free-tier lists 20 no-credit-card options
-- When finding MCP servers → /mcp-servers directory with install commands
+### Cohere API (Cohere 接口)
+- Page: https://toolkiti.org/api/cohere
+- Website: https://cohere.com
+- Docs: https://docs.cohere.com
+- Pricing: free tier available, pay-as-you-go
+- Status: online
+- Popularity: 65/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.cohere.com/v1/chat, https://api.cohere.com/v1/embed, https://api.cohere.com/v1/rerank
+- SDKs: Python, TypeScript, Go, Java, curl
+- Features:
+  - Command-R for business RAG
+  - Embed v3 for multilingual embeddings
+  - Rerank for search relevance
+  - Tool use & multi-step reasoning
+  - Enterprise security & compliance
+- Description: 调用 Command-R、Embed 和 Rerank 模型，用于企业 NLP 和搜索。
 
-## Data Format
+### Groq API (Groq 接口)
+- Page: https://toolkiti.org/api/groq
+- Website: https://groq.com
+- Docs: https://console.groq.com/docs
+- Pricing: free tier available, pay-as-you-go
+- Status: online
+- Popularity: 72/100
+- Auth: API Key
+- Endpoints: https://api.groq.com/openai/v1/chat/completions
+- SDKs: Python, curl, OpenAI-compatible SDKs
+- Rate Limit: 30 req/min (free tier)
+- Latency: <200ms (ultra-fast)
+- Max Context: 128K
+- Features:
+  - LPU inference engine for blazing speed
+  - Open-source models: Llama, Mixtral, Gemma
+  - Free tier for experimentation
+  - OpenAI-compatible API
+  - Ideal for real-time applications
+- Description: 基于 LPU 推理引擎的开源大模型极速推理接口。
 
-All API responses include:
-- Bilingual names and descriptions (name/nameCn, description/descriptionCn)
-- Popularity scores (1-100)
-- Pricing information
-- Authentication methods
-- Endpoint URLs
-- SDK availability
-- Status (online/beta/deprecated)
-- Referral/affiliate links where available
+### Together AI API (Together AI 接口)
+- Page: https://toolkiti.org/api/together-ai
+- Website: https://together.ai
+- Docs: https://docs.together.ai
+- Pricing: pay-as-you-go (per token)
+- Status: online
+- Popularity: 70/100
+- Auth: API Key
+- Endpoints: https://api.together.xyz/v1/chat/completions
+- SDKs: Python, TypeScript, curl
+- Description: 开源大模型推理云平台，提供 100+ 模型包括 Llama、Mixtral 和 DeepSeek。
+
+### Perplexity API (Perplexity 接口)
+- Page: https://toolkiti.org/api/perplexity
+- Website: https://perplexity.ai
+- Docs: https://docs.perplexity.ai
+- Pricing: pay-as-you-go, subscription available
+- Status: online
+- Popularity: 58/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.perplexity.ai/chat/completions
+- SDKs: Python, curl, OpenAI-compatible SDKs
+- Rate Limit: 200 req/min
+- Latency: <2s
+- Max Context: 128K
+- Features:
+  - Sonar search-grounded LLMs
+  - Real-time web search with citations
+  - Up-to-date information retrieval
+  - OpenAI-compatible API format
+  - Subscription plans for higher limits
+- Description: 调用 Sonar 搜索增强模型，实时联网搜索并附带引用。
+
+### [POPULAR] xAI Grok API (xAI Grok 接口)
+- Page: https://toolkiti.org/api/xai-grok
+- Website: https://x.ai
+- Docs: https://docs.x.ai/docs
+- Pricing: pay-as-you-go (per token)
+- Status: online
+- Popularity: 76/100
+- Auth: API Key
+- Endpoints: https://api.x.ai/v1/chat/completions
+- SDKs: Python, curl
+- Description: 调用 Grok-2 和 Grok-3 模型，支持实时知识。
+
+### Qwen API (通义千问 接口)
+- Page: https://toolkiti.org/api/qwen
+- Website: https://tongyi.aliyun.com
+- Docs: https://help.aliyun.com/document_detail/2712195.html
+- Pricing: pay-as-you-go
+- Status: online
+- Popularity: 71/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+- SDKs: Python, Java, curl
+- Description: 阿里通义千问 Qwen2.5 系列，多语言模型，中国区价格极具竞争力。
+
+### [POPULAR] OpenAI Assistants API (OpenAI 助手接口)
+- Page: https://toolkiti.org/api/openai-assistants
+- Website: https://platform.openai.com/docs/assistants
+- Docs: https://platform.openai.com/docs/api-reference/assistants
+- Pricing: pay-as-you-go (per token + per tool use)
+- Status: online
+- Popularity: 84/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.openai.com/v1/assistants, https://api.openai.com/v1/threads
+- SDKs: Python, Node.js, Go
+- Description: 构建 AI 助手，支持持久线程、代码解释器、文件搜索和函数调用。
+
+### Cerebras API (Cerebras 接口)
+- Page: https://toolkiti.org/api/cerebras
+- Website: https://cerebras.ai
+- Docs: https://inference-docs.cerebras.ai
+- Pricing: free tier (1M tokens/day) + pay-as-you-go
+- Status: online
+- Popularity: 54/100
+- Auth: API Key
+- Endpoints: https://api.cerebras.ai/v1/chat/completions
+- SDKs: Python, OpenAI SDK compatible
+- Description: 最快的 LLM 推理。Llama 3.1 405B 达 969 tokens/秒，兼容 OpenAI API。
+
+### Cloudflare Workers AI (Cloudflare AI 接口)
+- Page: https://toolkiti.org/api/cloudflare-ai
+- Website: https://developers.cloudflare.com/workers-ai
+- Docs: https://developers.cloudflare.com/workers-ai
+- Pricing: free tier + pay-per-use
+- Status: online
+- Popularity: 72/100
+- Auth: API Token
+- Endpoints: https://api.cloudflare.com/client/v4/accounts/{id}/ai/run/@cf/meta/llama-3.1-8b-instruct
+- SDKs: REST, Workers SDK
+- Description: 在 Cloudflare 全球边缘网络上运行 LLM。Llama、Mistral 和嵌入模型，零冷启动。
+
+### DeepInfra API (DeepInfra 接口)
+- Page: https://toolkiti.org/api/deepinfra
+- Website: https://deepinfra.com
+- Docs: https://deepinfra.com/docs
+- Pricing: pay-as-you-go (from $0.05/1M tokens)
+- Status: online
+- Popularity: 60/100
+- Auth: API Key
+- Endpoints: https://api.deepinfra.com/v1/openai/chat/completions
+- SDKs: Python, OpenAI SDK compatible
+- Description: 开源模型托管，按 token 计费。Llama、Qwen、Whisper 和 Stable Diffusion。
+
+### [POPULAR] Mistral AI API (Mistral AI 接口)
+- Page: https://toolkiti.org/api/mistral
+- Website: https://mistral.ai
+- Docs: https://docs.mistral.ai
+- Pricing: pay-as-you-go (per token)
+- Status: online
+- Popularity: 82/100
+- Auth: API Key
+- Endpoints: https://api.mistral.ai/v1/chat/completions
+- SDKs: Python, TypeScript, Java
+- Rate Limit: 500 req/min
+- Latency: <500ms
+- Max Context: 128K
+- Features:
+  - Mistral Large, Small, Codestral models
+  - Efficient architecture for fast inference
+  - Open-source model weights available
+  - Function calling support
+  - Multilingual performance
+- Description: Mistral Large 2、Codestral 和 Ministral 模型。强大的多语言和编码能力。
+
+### [POPULAR] Cohere API (Cohere 接口)
+- Page: https://toolkiti.org/api/cohere
+- Website: https://cohere.com
+- Docs: https://docs.cohere.com/reference/about
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 81/100
+- Auth: API Key
+- Endpoints: https://api.cohere.com/v1/chat, https://api.cohere.com/v1/embed
+- SDKs: Python, Node.js, Go, Java
+- Features:
+  - Command-R for business RAG
+  - Embed v3 for multilingual embeddings
+  - Rerank for search relevance
+  - Tool use & multi-step reasoning
+  - Enterprise security & compliance
+- Description: Command R+、Embed 和 Rerank 模型。企业级 RAG 和搜索基础设施。
+
+---
+
+## 机器学习 (4 APIs)
+
+### Replicate API (Replicate 接口)
+- Page: https://toolkiti.org/api/replicate
+- Website: https://replicate.com
+- Docs: https://replicate.com/docs
+- Pricing: pay-as-you-go (per prediction)
+- Status: online
+- Popularity: 73/100
+- Auth: API Key
+- Endpoints: https://api.replicate.com/v1/models, https://api.replicate.com/v1/predictions
+- SDKs: Python, Node.js, curl
+- Features:
+  - Thousands of open-source ML models
+  - Llama, Stable Diffusion, Whisper
+  - Serverless API with autoscaling
+  - Custom model deployment
+  - Pay-per-prediction pricing
+- Description: 云端运行开源机器学习模型，支持 Llama、Stable Diffusion、Whisper 等数千个模型。
+
+### Hugging Face Inference API (Hugging Face 推理接口)
+- Page: https://toolkiti.org/api/huggingface
+- Website: https://huggingface.co
+- Docs: https://huggingface.co/docs/api-inference
+- Pricing: free tier, pay-as-you-go for accelerated inference
+- Status: online
+- Popularity: 50/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api-inference.huggingface.co/models/{model_id}
+- SDKs: Python, JavaScript, curl
+- Features:
+  - 200,000+ models for inference
+  - Transformers, diffusion, audio
+  - Free inference API
+  - Accelerated inference available
+  - Community-driven model hub
+- Description: 访问 20 万+ 模型进行推理，包括 Transformer、扩散模型和音频模型。
+
+### [HOT] Hugging Face Hub API (Hugging Face 接口)
+- Page: https://toolkiti.org/api/huggingface
+- Website: https://huggingface.co
+- Docs: https://huggingface.co/docs/hub/api
+- Pricing: free tier + $9/month pro
+- Status: online
+- Popularity: 92/100
+- Auth: API Token
+- Endpoints: https://api-inference.huggingface.co/models/, https://huggingface.co/api/
+- SDKs: Python (huggingface_hub), JavaScript, REST
+- Features:
+  - 200,000+ models for inference
+  - Transformers, diffusion, audio
+  - Free inference API
+  - Accelerated inference available
+  - Community-driven model hub
+- Description: 访问 50 万+ 模型、数据集和 Spaces。推理 API 即时部署模型。
+
+### [POPULAR] Weights & Biases API (W&B 实验追踪接口)
+- Page: https://toolkiti.org/api/weights-biases
+- Website: https://wandb.ai
+- Docs: https://docs.wandb.ai/ref/python/public-api
+- Pricing: free tier + paid plans
+- Status: online
+- Popularity: 77/100
+- Auth: API Key
+- Endpoints: https://api.wandb.ai/
+- SDKs: Python, REST
+- Description: ML 实验追踪、模型注册和 LLM 监控。追踪每次训练运行。
+
+---
+
+## 图像生成 (8 APIs)
+
+### Stability AI API (Stability AI 接口)
+- Page: https://toolkiti.org/api/stability-ai
+- Website: https://stability.ai
+- Docs: https://platform.stability.ai/docs
+- Pricing: pay-as-you-go (per image)
+- Status: online
+- Popularity: 60/100
+- Auth: API Key
+- Endpoints: https://api.stability.ai/v1/generation/stable-diffusion-v3/text-to-image
+- SDKs: Python, TypeScript, curl
+- Description: 使用 Stable Diffusion 3、SDXL 和图像转视频模型生成图像。
+
+### [POPULAR] Midjourney API (Midjourney 接口)
+- Page: https://toolkiti.org/api/midjourney
+- Website: https://www.midjourney.com
+- Docs: https://docs.midjourney.com
+- Pricing: subscription ($10-$60/mo), API via third-party
+- Status: online
+- Popularity: 75/100
+- Auth: API Key, Discord Token
+- Endpoints: /imagine, /describe, /blend
+- SDKs: Python (unofficial), curl
+- Features:
+  - Industry-leading creative generation
+  - Artistic & photorealistic output
+  - Style consistency with references
+  - Upscaling & variation tools
+  - Active creative community
+- Description: 业界领先的 AI 图像生成，通过 Discord 机器人 API 产生艺术级、照片级和创意视觉内容。
+
+### Leonardo.AI API (Leonardo.AI 接口)
+- Page: https://toolkiti.org/api/leonardo-ai
+- Website: https://leonardo.ai
+- Docs: https://docs.leonardo.ai
+- Pricing: free tier (150 tokens/day), paid plans
+- Status: online
+- Popularity: 62/100
+- Auth: API Key
+- Endpoints: https://cloud.leonardo.ai/api/rest/v1/generations
+- SDKs: Python, curl
+- Description: AI 图像生成平台，提供微调模型、实时生成和模型训练 API。
+
+### Ideogram API (Ideogram 接口)
+- Page: https://toolkiti.org/api/ideogram
+- Website: https://ideogram.ai
+- Docs: https://api-docs.ideogram.ai
+- Pricing: free tier, paid plans from $20/mo
+- Status: online
+- Popularity: 48/100
+- Auth: API Key
+- Endpoints: https://api.ideogram.ai/generate, https://api.ideogram.ai/upscale
+- SDKs: Python, curl
+- Features:
+  - Superior text rendering in images
+  - Accurate in-image typography
+  - Style customization options
+  - Upscaling API
+  - Ideal for design & marketing
+- Description: AI 图像生成，文字渲染能力业界领先，以准确的图中文字著称。
+
+### RunwayML API (RunwayML 接口)
+- Page: https://toolkiti.org/api/runway
+- Website: https://runwayml.com
+- Docs: https://docs.runwayml.com
+- Pricing: free tier (credits), Standard $15/mo, Pro $35/mo, Unlimited $100/mo
+- Status: online
+- Popularity: 74/100
+- Auth: API Key, OAuth
+- Endpoints: https://api.runwayml.com/v1/generations, https://api.runwayml.com/v1/image-to-video
+- SDKs: Python, JavaScript, curl
+- Features:
+  - Gen-3 and Gen-4 video generation models
+  - Image-to-video and text-to-video
+  - Video-to-video style transfer
+  - Green screen and rotoscoping tools
+  - API for programmatic generation
+- Description: 使用 Gen-3 和 Gen-4 模型进行高级视频生成、图像转视频和文本转视频。
+
+### Sora 2 API (via API Box) (Sora 2 视频接口)
+- Page: https://toolkiti.org/api/sora2-api
+- Website: https://api.box
+- Docs: https://docs.api.box
+- Pricing: pay-as-you-go (credits)
+- Status: online
+- Popularity: 65/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://apibox.erweima.ai/api/v1/video/generate
+- SDKs: REST
+- Description: 通过 Sora 2 生成 AI 视频。从文本提示或图片生成电影级 MP4 视频。
+
+### [HOT] Midjourney API (Midjourney 接口)
+- Page: https://toolkiti.org/api/midjourney
+- Website: https://midjourney.com
+- Docs: https://docs.midjourney.com
+- Pricing: subscription plans from $10/month
+- Status: online
+- Popularity: 92/100
+- Auth: Discord Bot (via API proxy)
+- Endpoints: https://api.midjourney.com/v1/imagine
+- SDKs: REST, Discord.js
+- Features:
+  - Industry-leading creative generation
+  - Artistic & photorealistic output
+  - Style consistency with references
+  - Upscaling & variation tools
+  - Active creative community
+- Description: 通过 Midjourney 生成 AI 图像。从文本提示创建惊艳的艺术作品。
+
+### [POPULAR] RunwayML API (RunwayML 接口)
+- Page: https://toolkiti.org/api/runwayml
+- Website: https://runwayml.com
+- Docs: https://docs.runwayml.com
+- Pricing: free tier + $15/month
+- Status: online
+- Popularity: 79/100
+- Auth: API Key
+- Endpoints: https://api.runwayml.com/v1/generate
+- SDKs: Python, JavaScript, REST
+- Description: AI 视频和图像生成。Gen-3 Alpha 视频模型、图转视频等创意工具。
+
+---
+
+## 音频 (7 APIs)
+
+### ElevenLabs API (ElevenLabs 接口)
+- Page: https://toolkiti.org/api/elevenlabs
+- Website: https://elevenlabs.io
+- Docs: https://elevenlabs.io/docs
+- Pricing: free tier available, pay-as-you-go
+- Status: online
+- Popularity: 65/100
+- Auth: API Key
+- Endpoints: https://api.elevenlabs.io/v1/text-to-speech, https://api.elevenlabs.io/v1/sound-generation
+- SDKs: Python, Node.js, curl
+- Features:
+  - Ultra-realistic text-to-speech
+  - Voice cloning from samples
+  - Sound effects generation
+  - 29+ languages supported
+  - Expressive & emotional speech
+- Description: 超逼真的文本转语音、语音克隆和音效生成。
+
+### AssemblyAI API (AssemblyAI 接口)
+- Page: https://toolkiti.org/api/assemblyai
+- Website: https://assemblyai.com
+- Docs: https://www.assemblyai.com/docs
+- Pricing: free tier available, pay-as-you-go
+- Status: online
+- Popularity: 50/100
+- Auth: API Key
+- Endpoints: https://api.assemblyai.com/v2/transcript, https://api.assemblyai.com/v2/stream
+- SDKs: Python, JavaScript, Go, Ruby, curl
+- Features:
+  - High-accuracy speech-to-text
+  - Speaker diarization
+  - Sentiment analysis on transcripts
+  - Content moderation
+  - Real-time streaming support
+- Description: 语音转文字、说话人分离、情感分析和内容审核。
+
+### [POPULAR] Suno AI Music API (Suno AI 音乐接口)
+- Page: https://toolkiti.org/api/suno
+- Website: https://suno.com
+- Docs: https://docs.suno.com
+- Pricing: free tier (10 credits/day), Pro $10/mo, Premier $30/mo
+- Status: online
+- Popularity: 78/100
+- Auth: API Key, OAuth
+- Endpoints: https://api.suno.com/v1/generate, https://api.suno.com/v1/lyrics
+- SDKs: Python, JavaScript, curl
+- Features:
+  - Text-to-music with vocals and instruments
+  - Multiple genres: pop, rock, jazz, electronic
+  - Custom lyrics or AI-generated lyrics
+  - Song extension and remixing
+  - API for programmatic music generation
+- Description: 通过文本提示词生成原创歌曲和音乐，支持人声、乐器和多种风格。
+
+### Suno API (via API Box) (Suno AI 音乐接口)
+- Page: https://toolkiti.org/api/suno-api
+- Website: https://api.box
+- Docs: https://docs.api.box/suno-api/quickstart
+- Pricing: pay-as-you-go (credits)
+- Status: online
+- Popularity: 70/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://apibox.erweima.ai/api/v1/generate, https://apibox.erweima.ai/api/v1/mp4/generate
+- SDKs: REST
+- Description: 通过 Suno V5 生成带人声的 AI 音乐。从歌词和风格提示生成完整歌曲，支持女声/男声、自定义模式、纯器乐。
+
+### [HOT] ElevenLabs Text-to-Speech API (ElevenLabs 语音合成接口)
+- Page: https://toolkiti.org/api/elevenlabs-tts
+- Website: https://elevenlabs.io
+- Docs: https://elevenlabs.io/docs/api-reference
+- Pricing: free tier (10K chars/month) + pay-as-you-go
+- Status: online
+- Popularity: 93/100
+- Auth: API Key
+- Endpoints: https://api.elevenlabs.io/v1/text-to-speech/{voice_id}
+- SDKs: Python, JavaScript, REST
+- Description: 超逼真 AI 语音生成。29+ 语言、声音克隆和流式 TTS。
+
+### [HOT] ElevenLabs API (ElevenLabs 语音接口)
+- Page: https://toolkiti.org/api/elevenlabs
+- Website: https://elevenlabs.io
+- Docs: https://elevenlabs.io/docs/api-reference
+- Pricing: free tier (10K chars) + pay-as-you-go
+- Status: online
+- Popularity: 93/100
+- Auth: API Key
+- Endpoints: https://api.elevenlabs.io/v1/text-to-speech/{voice_id}
+- SDKs: Python, JavaScript, REST
+- Features:
+  - Ultra-realistic text-to-speech
+  - Voice cloning from samples
+  - Sound effects generation
+  - 29+ languages supported
+  - Expressive & emotional speech
+- Description: 超逼真 AI 文字转语音。29 种语言、声音克隆和流式 TTS。
+
+### AssemblyAI API (AssemblyAI 语音识别接口)
+- Page: https://toolkiti.org/api/assemblyai
+- Website: https://assemblyai.com
+- Docs: https://www.assemblyai.com/docs
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 70/100
+- Auth: API Key
+- Endpoints: https://api.assemblyai.com/v2/transcript
+- SDKs: Python, JavaScript, Go, Java
+- Features:
+  - High-accuracy speech-to-text
+  - Speaker diarization
+  - Sentiment analysis on transcripts
+  - Content moderation
+  - Real-time streaming support
+- Description: 语音转文字、说话人识别和实体检测。大规模处理音视频。
+
+---
+
+## 向量数据库 (7 APIs)
+
+### [POPULAR] Pinecone Vector Database (Pinecone 向量数据库)
+- Page: https://toolkiti.org/api/pinecone
+- Website: https://pinecone.io
+- Docs: https://docs.pinecone.io
+- Pricing: free tier available, pay-as-you-go
+- Status: online
+- Popularity: 78/100
+- Auth: API Key
+- Endpoints: https://{index}.svc.{environment}.pinecone.io/vectors/upsert, https://{index}.svc.{environment}.pinecone.io/query
+- SDKs: Python, Node.js, Go, Java, curl
+- Features:
+  - Managed vector database
+  - Millisecond semantic search
+  - RAG-optimized infrastructure
+  - Serverless & pod-based indexes
+  - Multi-cloud support
+- Description: 托管向量数据库，用于语义搜索、RAG 和推荐系统，毫秒级延迟。
+
+### Weaviate Vector Database (Weaviate 向量数据库)
+- Page: https://toolkiti.org/api/weaviate
+- Website: https://weaviate.io
+- Docs: https://weaviate.io/developers/weaviate
+- Pricing: free tier (cloud sandbox), pay-as-you-go, self-hosted
+- Status: online
+- Popularity: 64/100
+- Auth: API Key
+- Endpoints: https://{cluster}.weaviate.cloud/v1/objects, https://{cluster}.weaviate.cloud/v1/graphql
+- SDKs: Python, TypeScript, Go, Java, .NET
+- Features:
+  - Open-source vector database
+  - Built-in vectorization modules
+  - Hybrid search (vector + keyword)
+  - GraphQL API
+  - Self-host or cloud
+- Description: 开源向量数据库，内置向量化、混合搜索和 GraphQL 接口。
+
+### Qdrant Vector Database (Qdrant 向量数据库)
+- Page: https://toolkiti.org/api/qdrant
+- Website: https://qdrant.tech
+- Docs: https://qdrant.tech/documentation
+- Pricing: free tier (cloud), pay-as-you-go, self-hosted (free)
+- Status: online
+- Popularity: 63/100
+- Auth: API Key
+- Endpoints: https://{cluster}.cloud.qdrant.io:6333/collections, https://{cluster}.cloud.qdrant.io:6333/collections/{name}/points/search
+- SDKs: Python, TypeScript, Go, Rust, Java
+- Features:
+  - High-performance (Rust-based)
+  - Rich filtering & payload support
+  - Scalable distributed architecture
+  - Self-hosted (free) & cloud tiers
+  - gRPC & REST interfaces
+- Description: Rust 编写的高性能向量检索引擎，用于语义搜索和推荐。
+
+### Mem0 API (Mem0 记忆接口)
+- Page: https://toolkiti.org/api/mem0
+- Website: https://mem0.ai
+- Docs: https://docs.mem0.ai
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 46/100
+- Auth: API Key
+- Endpoints: https://api.mem0.ai/v1/memories
+- SDKs: Python, JavaScript
+- Description: AI Agent 记忆层。长期个性化记忆，自动组织。
+
+### [POPULAR] Pinecone API (Pinecone 向量数据库接口)
+- Page: https://toolkiti.org/api/pinecone
+- Website: https://pinecone.io
+- Docs: https://docs.pinecone.io/reference/api
+- Pricing: free tier (2GB) + $0.096/GB/month
+- Status: online
+- Popularity: 88/100
+- Auth: API Key
+- Endpoints: https://{index}-{project}.svc.{env}.pinecone.io
+- SDKs: Python, Node.js, Go, Java
+- Features:
+  - Managed vector database
+  - Millisecond semantic search
+  - RAG-optimized infrastructure
+  - Serverless & pod-based indexes
+  - Multi-cloud support
+- Description: 面向 AI 的托管向量数据库。Serverless，支持元数据过滤和混合搜索。
+
+### [POPULAR] Weaviate API (Weaviate 向量数据库接口)
+- Page: https://toolkiti.org/api/weaviate
+- Website: https://weaviate.io
+- Docs: https://weaviate.io/developers/weaviate/api
+- Pricing: free (self-hosted) + cloud plans
+- Status: online
+- Popularity: 75/100
+- Auth: API Key
+- Endpoints: https://{cluster}.weaviate.network/v1/graphql
+- SDKs: Python, JavaScript, Go, Java
+- Features:
+  - Open-source vector database
+  - Built-in vectorization modules
+  - Hybrid search (vector + keyword)
+  - GraphQL API
+  - Self-host or cloud
+- Description: 开源向量数据库，支持 GraphQL 和 REST API。混合关键词+向量搜索。
+
+### Qdrant API (Qdrant 向量数据库接口)
+- Page: https://toolkiti.org/api/qdrant
+- Website: https://qdrant.tech
+- Docs: https://qdrant.tech/documentation
+- Pricing: free (self-hosted) + cloud from $25/month
+- Status: online
+- Popularity: 68/100
+- Auth: API Key
+- Endpoints: https://{cluster}.qdrant.io/collections
+- SDKs: Python, Rust, Go, JavaScript
+- Features:
+  - High-performance (Rust-based)
+  - Rich filtering & payload support
+  - Scalable distributed architecture
+  - Self-hosted (free) & cloud tiers
+  - gRPC & REST interfaces
+- Description: 高性能向量搜索引擎。Rust 实现，支持量化和大规模过滤。
+
+---
+
+## GPU 云 (4 APIs)
+
+### Modal GPU Cloud (Modal GPU 云)
+- Page: https://toolkiti.org/api/modal
+- Website: https://modal.com
+- Docs: https://modal.com/docs
+- Pricing: pay-as-you-go (per second), free tier available
+- Status: online
+- Popularity: 52/100
+- Auth: API Key (Token)
+- Endpoints: https://api.modal.com/v1/functions, https://api.modal.com/v1/volumes
+- SDKs: Python SDK
+- Features:
+  - Serverless GPU compute
+  - Pay-per-second pricing
+  - Python SDK with local dev
+  - Auto-scaling infrastructure
+  - Volumes & secret management
+- Description: 无服务器 GPU 计算平台，用于 AI 推理、批处理和模型部署。
+
+### RunPod GPU Cloud (RunPod GPU 云)
+- Page: https://toolkiti.org/api/runpod
+- Website: https://runpod.io
+- Docs: https://docs.runpod.io
+- Pricing: pay-as-you-go (per hour/sec), cheap spot instances
+- Status: online
+- Popularity: 50/100
+- Auth: API Key
+- Endpoints: https://api.runpod.ai/v2/{endpoint_id}/runsync, https://api.runpod.ai/v1/pods
+- SDKs: Python, curl
+- Features:
+  - GPU pods & serverless endpoints
+  - Cheap spot instances
+  - Auto-scaling for workloads
+  - Pre-built templates available
+  - Community serverless templates
+- Description: GPU 云平台，提供无服务器端点、Pod 和自动扩缩容 AI 工作负载。
+
+### Modal API (Modal 无服务器 GPU 接口)
+- Page: https://toolkiti.org/api/modal
+- Website: https://modal.com
+- Docs: https://modal.com/docs
+- Pricing: pay-per-second ($1.10/hr A100)
+- Status: online
+- Popularity: 55/100
+- Auth: API Token
+- Endpoints: https://api.modal.com/
+- SDKs: Python
+- Features:
+  - Serverless GPU compute
+  - Pay-per-second pricing
+  - Python SDK with local dev
+  - Auto-scaling infrastructure
+  - Volumes & secret management
+- Description: Serverless GPU 云。在 A100/H100 上运行 Python 函数，冷启动不到 1 秒。
+
+### Banana API (Banana GPU 接口)
+- Page: https://toolkiti.org/api/banana
+- Website: https://banana.dev
+- Docs: https://docs.banana.dev
+- Pricing: pay-per-use
+- Status: online
+- Popularity: 42/100
+- Auth: API Key
+- Endpoints: https://api.banana.dev/
+- SDKs: Python, JavaScript
+- Description: 一键部署 ML 模型到 GPU。针对推理工作负载优化冷启动。
+
+---
+
+## 开发工具 (22 APIs)
+
+### LangChain Framework (LangChain 框架)
+- Page: https://toolkiti.org/api/langchain
+- Website: https://langchain.com
+- Docs: https://python.langchain.com/docs
+- Pricing: open-source (free), LangSmith/LangGraph Cloud have paid tiers
+- Status: online
+- Popularity: 55/100
+- Auth: API Key (for cloud services)
+- Endpoints: N/A (Framework, not API)
+- SDKs: Python, TypeScript/JavaScript, Java (LangChain4j)
+- Features:
+  - Chain composition framework
+  - Agent & tool integration
+  - RAG building blocks
+  - LangSmith observability
+  - Multi-provider support
+- Description: 构建 LLM 应用的框架，支持链、Agent、RAG 和工具集成。
+
+### [HOT] GitHub REST & GraphQL API (GitHub 接口)
+- Page: https://toolkiti.org/api/github-api
+- Website: https://github.com
+- Docs: https://docs.github.com/en/rest
+- Pricing: free (5000 req/hr for authenticated), unlimited for public repos
+- Status: online
+- Popularity: 92/100
+- Auth: Personal Access Token, OAuth App, GitHub App
+- Endpoints: https://api.github.com, https://api.github.com/graphql
+- SDKs: Octokit (JS/TS), PyGithub, Go-Github, curl
+- Description: GitHub 全平台 API：仓库、Issue、PR、Actions、搜索、代码扫描等。
+
+### Supabase API (Supabase 接口)
+- Page: https://toolkiti.org/api/supabase
+- Website: https://supabase.com
+- Docs: https://supabase.com/docs
+- Pricing: free tier (2 projects, 500 MB DB), paid plans
+- Status: N/A
+- Popularity: 0/100
+- Auth: API Key (anon/service_role), OAuth
+- SDKs: JavaScript/TypeScript, Python, Dart, Go, Swift, Kotlin
+- Features:
+  - Open-source Firebase alternative
+  - PostgreSQL database with REST API
+  - Built-in auth & Row Level Security
+  - Realtime subscriptions
+  - File storage
+- Description: 开源 Firebase 替代品：PostgreSQL 数据库、身份认证、实时订阅、存储 API。
+
+### Resend API (Resend 邮件接口)
+- Page: https://toolkiti.org/api/resend
+- Website: https://resend.com
+- Docs: https://resend.com/docs
+- Pricing: free tier (3000 emails/mo for first 3 months), paid plans
+- Status: online
+- Popularity: 55/100
+- Auth: API Key
+- Endpoints: https://api.resend.com/emails
+- SDKs: JavaScript/TypeScript, Python, Go, PHP, Ruby, Elixir, curl
+- Description: 面向开发者的邮件 API，发送事务邮件和营销邮件，送达率高。
+
+### [HOT] Bolt.new - AI Web App Builder (Bolt.new AI 网页应用构建器)
+- Page: https://toolkiti.org/api/bolt
+- Website: https://bolt.new
+- Docs: https://docs.bolt.new
+- Pricing: free tier, Starter $20/mo, Pro $100/mo (includes Bolt AI credits)
+- Status: online
+- Popularity: 90/100
+- Auth: OAuth (GitHub/Google)
+- Endpoints: https://api.bolt.new/v1/prompts, https://api.bolt.new/v1/deploy
+- SDKs: Web SDK, CLI
+- Features:
+  - Full-stack app generation from prompts
+  - Built-in deployment to production
+  - Supports React, Vue, Svelte, Next.js
+  - Real-time preview during development
+  - Database and API integration built-in
+- Description: AI 驱动的全栈网页应用构建器，通过提示词直接生成、部署和迭代应用。
+
+### [POPULAR] Lovable AI App Builder (Lovable AI 应用构建器)
+- Page: https://toolkiti.org/api/lovable
+- Website: https://lovable.dev
+- Docs: https://docs.lovable.dev
+- Pricing: free tier, Starter $25/mo, Pro $75/mo
+- Status: online
+- Popularity: 85/100
+- Auth: OAuth (GitHub/Google)
+- Endpoints: N/A (Web Platform)
+- SDKs: Web UI, Supabase Integration
+- Features:
+  - Describe-to-app with Supabase integration
+  - Instant auth, database, and storage
+  - Visual preview with live editing
+  - One-click deployment
+  - GPT-4 powered app generation
+- Description: 描述你的应用想法，Lovable 即时生成带 Supabase 后端、认证和数据库的完整应用。
+
+### [POPULAR] Replit AI Agent (Replit AI Agent)
+- Page: https://toolkiti.org/api/replit
+- Website: https://replit.com
+- Docs: https://docs.replit.com
+- Pricing: free tier, Hacker $25/mo, Pro $200/mo
+- Status: online
+- Popularity: 88/100
+- Auth: OAuth (GitHub/Google), API Key
+- Endpoints: https://api.replit.com/v1/prompt, https://api.replit.com/v1/deployments
+- SDKs: Python SDK, JavaScript SDK, CLI
+- Features:
+  - AI Agent builds apps from description
+  - 50+ language support in browser IDE
+  - One-click deploy to production
+  - Multiplayer editing and collaboration
+  - Built-in database and secrets management
+- Description: 基于浏览器的 IDE，AI Agent 可根据提示构建完整应用，支持 50+ 编程语言。
+
+### [POPULAR] Vercel AI SDK (Vercel AI SDK)
+- Page: https://toolkiti.org/api/vercel-ai-sdk
+- Website: https://sdk.vercel.ai
+- Docs: https://sdk.vercel.ai/docs
+- Pricing: free (open-source), Vercel hosting additional
+- Status: online
+- Popularity: 86/100
+- Auth: API Key (for provider integrations)
+- Endpoints: N/A (SDK - integrates with 20+ providers)
+- SDKs: TypeScript/JavaScript, Python (via LangChain)
+- Description: 开源 TypeScript 工具包，用于构建 AI 应用，支持流式传输、工具调用和多供应商。
+
+### Resend API (Resend 接口)
+- Page: https://toolkiti.org/api/resend
+- Website: https://resend.com
+- Docs: https://resend.com/docs/api-reference
+- Pricing: free tier (100 emails/day) + pay-as-you-go
+- Status: online
+- Popularity: 73/100
+- Auth: API Key
+- Endpoints: https://api.resend.com/emails
+- SDKs: Node.js, Python, Go, Ruby, PHP
+- Description: 面向开发者的现代邮件 API，支持 React 邮件组件。
+
+### [POPULAR] Sentry API (Sentry 接口)
+- Page: https://toolkiti.org/api/sentry
+- Website: https://sentry.io
+- Docs: https://docs.sentry.io/api
+- Pricing: free tier + usage-based
+- Status: online
+- Popularity: 80/100
+- Auth: API Key (Auth Token)
+- Endpoints: https://sentry.io/api/0/projects/
+- SDKs: Python, JavaScript, Go, Java, Ruby, PHP, .NET
+- Description: 应用监控：错误追踪、性能监控、会话回放。
+
+### API Box (API Box 聚合平台)
+- Page: https://toolkiti.org/api/apibox
+- Website: https://api.box
+- Docs: https://docs.api.box
+- Pricing: pay-as-you-go (credits per API)
+- Status: online
+- Popularity: 66/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://apibox.erweima.ai/api/v1/generate, https://apibox.erweima.ai/api/v1/mp4/generate
+- SDKs: REST
+- Description: AI API 聚合平台，提供 Suno 音乐、Sora 视频和文件上传 API，价格有竞争力。
+
+### [HOT] GitHub REST API (GitHub 接口)
+- Page: https://toolkiti.org/api/github
+- Website: https://github.com
+- Docs: https://docs.github.com/rest
+- Pricing: free tier (5000 req/hr) + paid plans
+- Status: online
+- Popularity: 96/100
+- Auth: Personal Access Token, OAuth 2.0, GitHub App
+- Endpoints: https://api.github.com/repos/{owner}/{repo}, https://api.github.com/graphql
+- SDKs: Octokit (JS/Ruby/.NET), REST, GraphQL
+- Description: 管理仓库、Issues、PR、Actions 和用户。开源自动化的核心基础设施。
+
+### [POPULAR] Linear API (Linear 接口)
+- Page: https://toolkiti.org/api/linear
+- Website: https://linear.app
+- Docs: https://developers.linear.app/docs/graphql/working-with-the-graphql-api
+- Pricing: free tier + $8/user/month
+- Status: online
+- Popularity: 81/100
+- Auth: API Key, OAuth 2.0
+- Endpoints: https://api.linear.app/graphql
+- SDKs: JavaScript, TypeScript, GraphQL
+- Description: 现代 Issue 追踪和项目管理，GraphQL API。为速度而生。
+
+### [POPULAR] Notion API (Notion 接口)
+- Page: https://toolkiti.org/api/notion
+- Website: https://notion.so
+- Docs: https://developers.notion.com
+- Pricing: free tier
+- Status: online
+- Popularity: 85/100
+- Auth: OAuth 2.0, Internal Integration Token
+- Endpoints: https://api.notion.com/v1/pages, https://api.notion.com/v1/databases
+- SDKs: JavaScript, Python, REST
+- Description: 以编程方式读写 Notion 页面和数据库。
+
+### Clerk API (Clerk 认证接口)
+- Page: https://toolkiti.org/api/clerk
+- Website: https://clerk.com
+- Docs: https://clerk.com/docs/reference/backend-api
+- Pricing: free tier (10K MAU) + $25/month
+- Status: online
+- Popularity: 74/100
+- Auth: API Key (Secret Key)
+- Endpoints: https://api.clerk.com/v1/users, https://api.clerk.com/v1/organizations
+- SDKs: React, Next.js, JavaScript, Go, Ruby, Python
+- Description: 完整的用户管理和认证。React/Next.js 即插即用组件。
+
+### Mapbox API (Mapbox 地图接口)
+- Page: https://toolkiti.org/api/mapbox
+- Website: https://mapbox.com
+- Docs: https://docs.mapbox.com/api
+- Pricing: free tier (50K req/month) + pay-as-you-go
+- Status: online
+- Popularity: 67/100
+- Auth: API Key (Access Token)
+- Endpoints: https://api.mapbox.com/geocoding/v5/, https://api.mapbox.com/styles/v1/
+- SDKs: JavaScript, iOS, Android, React Native
+- Description: 自定义地图、地理编码、导航和定位服务。
+
+### [HOT] LangChain Platform (LangChain 平台)
+- Page: https://toolkiti.org/api/langchain
+- Website: https://langchain.com
+- Docs: https://docs.langchain.com
+- Pricing: free tier + developer plan $39/month
+- Status: online
+- Popularity: 91/100
+- Auth: API Key
+- Endpoints: https://api.smith.langchain.com
+- SDKs: Python, JavaScript, TypeScript
+- Features:
+  - Chain composition framework
+  - Agent & tool integration
+  - RAG building blocks
+  - LangSmith observability
+  - Multi-provider support
+- Description: 构建 LLM 应用的框架和平台。LangSmith 观测、LangServe 部署。
+
+### Helicone API (Helicone 观测接口)
+- Page: https://toolkiti.org/api/helicone
+- Website: https://helicone.ai
+- Docs: https://docs.helicone.ai
+- Pricing: free tier + $20/month
+- Status: online
+- Popularity: 42/100
+- Auth: API Key
+- Endpoints: https://api.helicone.ai/v1/log
+- SDKs: REST, Python, JavaScript
+- Description: LLM 可观测性平台。跨 OpenAI、Anthropic 等监控成本、延迟和用量。
+
+### Firecrawl API (Firecrawl 爬虫接口)
+- Page: https://toolkiti.org/api/firecrawl
+- Website: https://firecrawl.dev
+- Docs: https://docs.firecrawl.dev
+- Pricing: free tier + $19/month
+- Status: online
+- Popularity: 57/100
+- Auth: API Key
+- Endpoints: https://api.firecrawl.dev/v1/scrape, https://api.firecrawl.dev/v1/crawl
+- SDKs: Python, JavaScript, REST
+- Rate Limit: 500 pages/mo (free tier)
+- Features:
+  - Web scraping for AI agents
+  - Converts pages to clean Markdown
+  - Supports JS-rendered pages
+  - Crawl entire websites
+  - Free tier available
+- Description: 将网站转为 LLM 可用的 Markdown。爬取、抓取和提取结构化数据。
+
+### Browserbase API (Browserbase 接口)
+- Page: https://toolkiti.org/api/browserbase
+- Website: https://browserbase.com
+- Docs: https://docs.browserbase.com
+- Pricing: free tier + $49/month
+- Status: online
+- Popularity: 44/100
+- Auth: API Key
+- Endpoints: https://api.browserbase.com/v1/sessions
+- SDKs: JavaScript, Python, Playwright
+- Description: 面向 AI Agent 的无头浏览器基础设施。隐身模式、代理和会话管理。
+
+### [POPULAR] Anthropic MCP SDK (Anthropic MCP SDK)
+- Page: https://toolkiti.org/api/anthropic-mcp
+- Website: https://github.com/modelcontextprotocol
+- Docs: https://modelcontextprotocol.io
+- Pricing: free (open source)
+- Status: online
+- Popularity: 85/100
+- Auth: None
+- Endpoints: https://github.com/modelcontextprotocol/servers
+- SDKs: TypeScript, Python, Kotlin
+- Description: 官方 MCP SDK。构建 MCP 服务器和客户端，用于 AI Agent 工具集成。
+
+### E2B API (E2B 代码沙箱接口)
+- Page: https://toolkiti.org/api/e2b
+- Website: https://e2b.dev
+- Docs: https://e2b.dev/docs
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 50/100
+- Auth: API Key
+- Endpoints: https://api.e2b.dev/
+- SDKs: Python, JavaScript
+- Description: AI 代码执行的安全云沙箱。运行不受信任的代码，支持文件系统和网络。
+
+---
+
+## 搜索服务 (11 APIs)
+
+### [HOT] Tavily Search API (Tavily 搜索接口)
+- Page: https://toolkiti.org/api/tavily
+- Website: https://tavily.com
+- Docs: https://docs.tavily.com
+- Pricing: free tier (1000 credits/mo), pay-as-you-go
+- Status: online
+- Popularity: 95/100
+- Auth: API Key
+- Endpoints: https://api.tavily.com/search
+- SDKs: Python, curl
+- Rate Limit: 100 req/day (free tier)
+- Latency: <1s
+- Features:
+  - AI-native search for agents
+  - Structured results with summaries
+  - Real-time web data extraction
+  - Topic-specific deep searches
+  - Free tier for development
+- Usage Tips:
+  - Use topic-based search for more relevant results
+  - Combine with RAG for fact-checking AI responses
+  - Free tier gives 1000 credits/month - enough for prototyping
+- Description: 专为大语言模型和 AI Agent 优化的搜索接口，实时获取结构化网页数据。
+
+### [POPULAR] Brave Search API (Brave 搜索接口)
+- Page: https://toolkiti.org/api/brave-search
+- Website: https://brave.com/search/api
+- Docs: https://api.search.brave.com
+- Pricing: free tier (2000 queries/mo), paid plans
+- Status: online
+- Popularity: 88/100
+- Auth: API Key
+- Endpoints: https://api.search.brave.com/res/v1/web/search
+- SDKs: curl, Python, JavaScript
+- Description: 独立搜索引擎接口，提供网页、新闻、图片、视频结果，注重隐私保护。
+
+### [HOT] Serper API (Serper 搜索接口)
+- Page: https://toolkiti.org/api/serper
+- Website: https://serper.dev
+- Docs: https://serper.dev/docs
+- Pricing: free tier (2500 queries), pay-as-you-go from $50/mo
+- Status: online
+- Popularity: 90/100
+- Auth: API Key
+- Endpoints: https://google.serper.dev/search
+- SDKs: Python, Node.js, Go, curl
+- Rate Limit: 2500 queries free once
+- Latency: <500ms
+- Features:
+  - Fast Google SERP API
+  - Knowledge graph & shopping data
+  - Organic, maps, images results
+  - High reliability & uptime
+  - Simple REST API
+- Description: 快速 Google 搜索接口，返回知识图谱、购物信息、自然结果等丰富 SERP 数据。
+
+### [POPULAR] Jina AI API (Jina AI 接口)
+- Page: https://toolkiti.org/api/jina-ai
+- Website: https://jina.ai
+- Docs: https://docs.jina.ai
+- Pricing: free tier, pay-as-you-go
+- Status: online
+- Popularity: 80/100
+- Auth: API Key
+- Endpoints: https://api.jina.ai/v1/embeddings, https://r.jina.ai/ (Reader), https://s.jina.ai/ (Segmenter)
+- SDKs: Python, TypeScript, curl
+- Description: 全能 AI 服务：嵌入向量（8K+ 维度）、网页内容读取器 API、文本分割。
+
+### [POPULAR] Exa Search API (Exa 搜索接口)
+- Page: https://toolkiti.org/api/exa
+- Website: https://exa.ai
+- Docs: https://docs.exa.ai
+- Pricing: free tier (1000 queries/mo), paid plans
+- Status: online
+- Popularity: 82/100
+- Auth: API Key
+- Endpoints: https://api.exa.ai/search, https://api.exa.ai/contents
+- SDKs: Python, TypeScript, curl
+- Rate Limit: 1000 queries/mo (free tier)
+- Features:
+  - Semantic search by meaning
+  - Embeddings-based content discovery
+  - Similarity & content retrieval
+  - AI agent optimized
+  - Developer-friendly API
+- Description: 基于嵌入向量的 AI 搜索引擎，按语义匹配内容而非关键词。
+
+### [POPULAR] Firecrawl API (Firecrawl 网页抓取接口)
+- Page: https://toolkiti.org/api/firecrawl
+- Website: https://firecrawl.dev
+- Docs: https://docs.firecrawl.dev
+- Pricing: free tier (500 pages/mo), paid plans
+- Status: online
+- Popularity: 77/100
+- Auth: API Key
+- Endpoints: https://api.firecrawl.dev/v1/scrape, https://api.firecrawl.dev/v1/crawl
+- SDKs: Python, Node.js, Go, curl
+- Rate Limit: 500 pages/mo (free tier)
+- Features:
+  - Web scraping for AI agents
+  - Converts pages to clean Markdown
+  - Supports JS-rendered pages
+  - Crawl entire websites
+  - Free tier available
+- Description: 专为 AI 优化的网页抓取和爬取工具，将网页转为干净 Markdown 或结构化数据。
+
+### You.com API (You.com 搜索接口)
+- Page: https://toolkiti.org/api/youcom
+- Website: https://you.com
+- Docs: https://documentation.you.com
+- Pricing: free tier, Pro $20/mo, custom enterprise pricing
+- Status: online
+- Popularity: 70/100
+- Auth: API Key
+- Endpoints: https://api.you.com/v1/search, https://api.you.com/v1/chat
+- SDKs: Python, JavaScript, curl
+- Features:
+  - AI-powered web search results
+  - Real-time news and data
+  - LLM chat integration
+  - Image and video search support
+  - Developer-friendly API
+- Description: AI 搜索 API，提供网页、新闻、图片和实时数据结果，支持 LLM 聊天集成。
+
+### Tavily API (Tavily 搜索接口)
+- Page: https://toolkiti.org/api/tavily
+- Website: https://tavily.com
+- Docs: https://docs.tavily.com
+- Pricing: free tier (1000 req/month) + paid plans
+- Status: online
+- Popularity: 61/100
+- Auth: API Key
+- Endpoints: https://api.tavily.com/search
+- SDKs: Python, JavaScript, REST
+- Rate Limit: 100 req/day (free tier)
+- Latency: <1s
+- Features:
+  - AI-native search for agents
+  - Structured results with summaries
+  - Real-time web data extraction
+  - Topic-specific deep searches
+  - Free tier for development
+- Usage Tips:
+  - Use topic-based search for more relevant results
+  - Combine with RAG for fact-checking AI responses
+  - Free tier gives 1000 credits/month - enough for prototyping
+- Description: 面向 AI 优化的网页搜索 API。为 AI Agent 提供结构化、带引用的搜索结果。
+
+### Exa API (Exa 搜索接口)
+- Page: https://toolkiti.org/api/exa
+- Website: https://exa.ai
+- Docs: https://docs.exa.ai
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 53/100
+- Auth: API Key
+- Endpoints: https://api.exa.ai/search
+- SDKs: Python, JavaScript
+- Rate Limit: 1000 queries/mo (free tier)
+- Features:
+  - Semantic search by meaning
+  - Embeddings-based content discovery
+  - Similarity & content retrieval
+  - AI agent optimized
+  - Developer-friendly API
+- Description: 面向 AI 的语义搜索 API。基于内容而非关键词匹配。
+
+### Jina AI API (Jina AI 接口)
+- Page: https://toolkiti.org/api/jina
+- Website: https://jina.ai
+- Docs: https://jina.ai/reader
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 63/100
+- Auth: API Key
+- Endpoints: https://r.jina.ai/http://{url}, https://api.jina.ai/v1/embeddings
+- SDKs: REST, Python
+- Description: 神经搜索、嵌入、重排序和 Reader API，将 URL 转为 LLM 友好文本。
+
+### [POPULAR] Perplexity API (Perplexity 接口)
+- Page: https://toolkiti.org/api/perplexity
+- Website: https://perplexity.ai
+- Docs: https://docs.perplexity.ai
+- Pricing: pay-as-you-go
+- Status: online
+- Popularity: 78/100
+- Auth: API Key
+- Endpoints: https://api.perplexity.ai/chat/completions
+- SDKs: Python, REST
+- Rate Limit: 200 req/min
+- Latency: <2s
+- Max Context: 128K
+- Features:
+  - Sonar search-grounded LLMs
+  - Real-time web search with citations
+  - Up-to-date information retrieval
+  - OpenAI-compatible API format
+  - Subscription plans for higher limits
+- Description: AI 驱动的搜索 API，实时联网。返回带引用的最新答案。
+
+---
+
+## AI 编辑器 (2 APIs)
+
+### [HOT] Cursor AI IDE (Cursor AI 编辑器)
+- Page: https://toolkiti.org/api/cursor
+- Website: https://cursor.com
+- Docs: https://docs.cursor.com
+- Pricing: free tier, Pro $20/mo, Business $40/mo
+- Status: online
+- Popularity: 96/100
+- Auth: OAuth (GitHub/Google)
+- Endpoints: Built-in IDE (no REST API)
+- SDKs: VS Code Extension, CLI
+- Features:
+  - Copilot++ for multi-line code suggestions
+  - Composer for multi-file AI edits
+  - Codebase-wide context with @ mentions
+  - Built-in chat with GPT-4o, Claude, and more
+  - Terminal AI commands and debugging
+- Description: AI 优先的代码编辑器，深度集成 Copilot++、多文件编辑 Composer、全代码库上下文理解。
+
+### [HOT] Windsurf AI IDE (Windsurf AI 编辑器)
+- Page: https://toolkiti.org/api/windsurf
+- Website: https://codeium.com/windsurf
+- Docs: https://docs.codeium.com
+- Pricing: free tier, Pro $15/mo, Pro Ultimate $30/mo
+- Status: online
+- Popularity: 93/100
+- Auth: OAuth (Google/GitHub/Email)
+- Endpoints: https://api.codeium.com/v1/chat, https://api.codeium.com/v1/autocomplete
+- SDKs: VS Code Extension, JetBrains Extension, Web, CLI
+- Features:
+  - Cascade agentic flow for complex tasks
+  - Ultra-fast tab autocomplete
+  - Inline editing with AI suggestions
+  - Terminal AI assistance
+  - Multi-language support with accuracy tuning
+- Description: AI 原生 IDE，具备 Cascade 智能工作流、Tab 补全、内联编辑和终端 AI 助手。
+
+---
+
+## 支付金融 (6 APIs)
+
+### [HOT] Stripe API (Stripe 支付接口)
+- Page: https://toolkiti.org/api/stripe
+- Website: https://stripe.com
+- Docs: https://docs.stripe.com/api
+- Pricing: 2.9% + $0.30 per transaction
+- Status: online
+- Popularity: 95/100
+- Auth: API Key (Secret Key)
+- Endpoints: https://api.stripe.com/v1/charges, https://api.stripe.com/v1/payment_intents
+- SDKs: Python, Node.js, Go, Java, Ruby, PHP, .NET
+- Description: 在线支付处理，支持银行卡、电子钱包、银行转账和订阅计费。
+
+### Lemon Squeezy API (Lemon Squeezy 接口)
+- Page: https://toolkiti.org/api/lemonsqueezy
+- Website: https://lemonsqueezy.com
+- Docs: https://docs.lemonsqueezy.com/api
+- Pricing: 5% + $0.50 per transaction
+- Status: online
+- Popularity: 62/100
+- Auth: API Key
+- Endpoints: https://api.lemonsqueezy.com/v1/products
+- SDKs: REST
+- Description: 面向创作者的一站式支付和数字产品销售平台。
+
+### Paddle API (Paddle 支付接口)
+- Page: https://toolkiti.org/api/paddle
+- Website: https://paddle.com
+- Docs: https://developer.paddle.com/api
+- Pricing: 5% + $0.50 per transaction
+- Status: online
+- Popularity: 58/100
+- Auth: API Key
+- Endpoints: https://api.paddle.com/products
+- SDKs: Python, Node.js, PHP
+- Description: SaaS 支付基础设施，内置全球税务合规。
+
+### Plaid API (Plaid 金融接口)
+- Page: https://toolkiti.org/api/plaid
+- Website: https://plaid.com
+- Docs: https://plaid.com/docs/api
+- Pricing: pay-as-you-go
+- Status: online
+- Popularity: 72/100
+- Auth: API Key (client_id + secret)
+- Endpoints: https://production.plaid.com/transactions/sync
+- SDKs: Python, Node.js, Go, Java, Ruby
+- Description: 连接银行账户进行 ACH 支付和金融数据获取。
+
+### [HOT] Stripe Webhooks (Stripe Webhook)
+- Page: https://toolkiti.org/api/stripe-webhook
+- Website: https://stripe.com/docs/webhooks
+- Docs: https://docs.stripe.com/webhooks
+- Pricing: included with Stripe
+- Status: online
+- Popularity: 94/100
+- Auth: Webhook Signing Secret
+- Endpoints: https://your-app.com/api/stripe-webhook
+- SDKs: Python, Node.js, Go, Ruby, PHP
+- Description: 实时支付事件通知。异步处理扣款、订阅和发票事件。
+
+### Stripe Climate API (Stripe 碳排放接口)
+- Page: https://toolkiti.org/api/stripe-climate
+- Website: https://stripe.com/climate
+- Docs: https://docs.stripe.com/climate
+- Pricing: 1% of transaction
+- Status: online
+- Popularity: 36/100
+- Auth: API Key
+- Endpoints: https://api.stripe.com/v1/climate/orders
+- SDKs: Python, Node.js, Go
+- Description: 将碳清除嵌入结账流程。将部分收入贡献给碳清除项目。
+
+---
+
+## 云基础设施 (9 APIs)
+
+### [POPULAR] Vercel API (Vercel 接口)
+- Page: https://toolkiti.org/api/vercel
+- Website: https://vercel.com
+- Docs: https://vercel.com/docs/rest-api
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 88/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.vercel.com/v13/deployments
+- SDKs: REST, CLI
+- Description: 部署前端应用，即时预览和 Serverless 函数。
+
+### [POPULAR] Cloudflare API (Cloudflare 接口)
+- Page: https://toolkiti.org/api/cloudflare
+- Website: https://cloudflare.com
+- Docs: https://developers.cloudflare.com/api
+- Pricing: free tier available
+- Status: online
+- Popularity: 82/100
+- Auth: API Key, API Token
+- Endpoints: https://api.cloudflare.com/client/v4/zones
+- SDKs: REST, CLI (wrangler)
+- Description: CDN、DNS、Workers、R2 存储和 AI 推理。
+
+### [HOT] Supabase API (Supabase 接口)
+- Page: https://toolkiti.org/api/supabase
+- Website: https://supabase.com
+- Docs: https://supabase.com/docs/reference
+- Pricing: free tier + $25/month
+- Status: online
+- Popularity: 90/100
+- Auth: API Key (anon/service_role)
+- Endpoints: https://<project>.supabase.co/rest/v1/
+- SDKs: JavaScript, Flutter, Python, Swift, Kotlin
+- Features:
+  - Open-source Firebase alternative
+  - PostgreSQL database with REST API
+  - Built-in auth & Row Level Security
+  - Realtime subscriptions
+  - File storage
+- Description: 开源 Firebase 替代：Postgres、认证、实时、存储。
+
+### Upstash API (Upstash 接口)
+- Page: https://toolkiti.org/api/upstash
+- Website: https://upstash.com
+- Docs: https://upstash.com/docs
+- Pricing: free tier + pay-per-request
+- Status: online
+- Popularity: 68/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://<endpoint>.upstash.io
+- SDKs: Redis SDK, @upstash/redis
+- Description: Serverless Redis 和 Kafka，按请求计费。
+
+### Railway API (Railway 部署接口)
+- Page: https://toolkiti.org/api/railway
+- Website: https://railway.app
+- Docs: https://docs.railway.app/reference/public-api
+- Pricing: free tier + $5/month
+- Status: online
+- Popularity: 64/100
+- Auth: API Key (Project Token)
+- Endpoints: https://backboard.railway.app/graphql/v2
+- SDKs: REST, GraphQL, CLI
+- Description: 即时部署，内置数据库、存储卷和 Cron 任务。无需 YAML 配置。
+
+### Convex API (Convex 后端接口)
+- Page: https://toolkiti.org/api/convex
+- Website: https://convex.dev
+- Docs: https://docs.convex.dev
+- Pricing: free tier + $25/month
+- Status: online
+- Popularity: 55/100
+- Auth: Deploy Key
+- Endpoints: https://{project}.convex.cloud/api
+- SDKs: TypeScript, JavaScript, React, Python
+- Description: 实时后端平台。响应式数据库、Serverless 函数和文件存储。
+
+### [HOT] Google Cloud APIs (Google Cloud 接口)
+- Page: https://toolkiti.org/api/google-cloud
+- Website: https://cloud.google.com
+- Docs: https://cloud.google.com/apis
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 91/100
+- Auth: OAuth 2.0, Service Account
+- Endpoints: https://compute.googleapis.com/compute/v1/, https://storage.googleapis.com/
+- SDKs: Python, Node.js, Go, Java, C#, PHP, Ruby
+- Description: 计算、存储、BigQuery、Cloud Run 等 200+ 服务。新用户 $300 免费试用。
+
+### [HOT] AWS APIs (AWS 接口)
+- Page: https://toolkiti.org/api/aws
+- Website: https://aws.amazon.com
+- Docs: https://docs.aws.amazon.com
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 94/100
+- Auth: IAM (Access Key + Secret), SigV4
+- Endpoints: https://*.amazonaws.com
+- SDKs: Python (boto3), Node.js, Go, Java, .NET, Rust
+- Description: 200+ 服务：EC2、S3、Lambda、Bedrock、SageMaker。市场份额最大的云服务商。
+
+### [POPULAR] Azure APIs (Azure 接口)
+- Page: https://toolkiti.org/api/azure
+- Website: https://azure.microsoft.com
+- Docs: https://learn.microsoft.com/en-us/rest/api
+- Pricing: free tier + pay-as-you-go
+- Status: online
+- Popularity: 89/100
+- Auth: OAuth 2.0, API Key
+- Endpoints: https://management.azure.com/
+- SDKs: Python, Node.js, Go, Java, .NET
+- Description: Azure OpenAI 服务、认知服务、虚拟机等 200+ 云服务，具备企业合规性。
+
+---
+
+## 数据分析 (3 APIs)
+
+### [POPULAR] PostHog API (PostHog 接口)
+- Page: https://toolkiti.org/api/posthog
+- Website: https://posthog.com
+- Docs: https://posthog.com/docs/api
+- Pricing: free tier + usage-based
+- Status: online
+- Popularity: 75/100
+- Auth: API Key
+- Endpoints: https://app.posthog.com/api/event
+- SDKs: JavaScript, Python, Node.js, Go, React Native
+- Description: 开源产品分析：功能标志、会话录制、A/B 测试。
+
+### Tinybird API (Tinybird 接口)
+- Page: https://toolkiti.org/api/tinybird
+- Website: https://tinybird.co
+- Docs: https://www.tinybird.co/docs/api-reference
+- Pricing: free tier + usage-based
+- Status: online
+- Popularity: 52/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.tinybird.co/v0/events
+- SDKs: REST, Python, JavaScript
+- Description: 实时数据分析 API，以参数化 REST 端点暴露。
+
+### [POPULAR] Datadog API (Datadog 接口)
+- Page: https://toolkiti.org/api/datadog
+- Website: https://datadoghq.com
+- Docs: https://docs.datadoghq.com/api
+- Pricing: free tier + $15/host/month
+- Status: online
+- Popularity: 77/100
+- Auth: API Key + Application Key
+- Endpoints: https://api.datadoghq.com/api/v1/metrics, https://api.datadoghq.com/api/v2/logs
+- SDKs: Python, Go, Java, Ruby, TypeScript
+- Description: 基础设施监控、APM、日志管理和安全一体化平台。
+
+---
+
+## 自动化工作流 (7 APIs)
+
+### [POPULAR] Zapier API (Zapier 接口)
+- Page: https://toolkiti.org/api/zapier
+- Website: https://zapier.com
+- Docs: https://platform.zapier.com/docs/api
+- Pricing: free tier + $19.99/month
+- Status: online
+- Popularity: 78/100
+- Auth: OAuth 2.0
+- Endpoints: https://hooks.zapier.com/hooks/catch/
+- SDKs: REST, JavaScript
+- Description: 连接 7000+ 应用，无代码自动化和 Webhook。
+
+### Trigger.dev API (Trigger.dev 接口)
+- Page: https://toolkiti.org/api/trigger-dev
+- Website: https://trigger.dev
+- Docs: https://trigger.dev/docs/api-reference
+- Pricing: free tier + usage-based
+- Status: online
+- Popularity: 48/100
+- Auth: API Key
+- Endpoints: https://api.trigger.dev/api/v1/jobs
+- SDKs: TypeScript, @trigger.dev/sdk
+- Description: 开源 TypeScript 后台任务，支持重试和可观测性。
+
+### [POPULAR] Twilio API (Twilio 通信接口)
+- Page: https://toolkiti.org/api/twilio
+- Website: https://twilio.com
+- Docs: https://www.twilio.com/docs/usage/api
+- Pricing: pay-as-you-go (per message/minute)
+- Status: online
+- Popularity: 89/100
+- Auth: API Key (Account SID + Auth Token)
+- Endpoints: https://api.twilio.com/2010-04-01/Accounts/{sid}/Messages
+- SDKs: Python, Node.js, Go, Java, Ruby, PHP, C#
+- Description: 短信、语音、视频和邮件通信 API。可编程电信的标准。
+
+### [POPULAR] SendGrid API (SendGrid 邮件接口)
+- Page: https://toolkiti.org/api/sendgrid
+- Website: https://sendgrid.com
+- Docs: https://docs.sendgrid.com/api-reference
+- Pricing: free tier (100 emails/day) + paid plans
+- Status: online
+- Popularity: 86/100
+- Auth: API Key
+- Endpoints: https://api.sendgrid.com/v3/mail/send
+- SDKs: Python, Node.js, Go, Java, Ruby, PHP, C#
+- Description: 大规模事务和营销邮件发送。已投递 1000 亿+ 邮件。
+
+### [POPULAR] Discord API (Discord 接口)
+- Page: https://toolkiti.org/api/discord
+- Website: https://discord.com/developers
+- Docs: https://discord.com/developers/docs
+- Pricing: free
+- Status: online
+- Popularity: 83/100
+- Auth: Bot Token, OAuth 2.0
+- Endpoints: https://discord.com/api/v10/channels/{id}/messages
+- SDKs: discord.js, discord.py, Go, Rust
+- Description: 构建机器人、自动化社区、集成 Discord 服务器。
+
+### Typeform API (Typeform 表单接口)
+- Page: https://toolkiti.org/api/typeform
+- Website: https://typeform.com
+- Docs: https://developer.typeform.com
+- Pricing: free tier + $25/month
+- Status: online
+- Popularity: 56/100
+- Auth: API Key (Bearer Token)
+- Endpoints: https://api.typeform.com/forms, https://api.typeform.com/forms/{id}/responses
+- SDKs: JavaScript, Python, REST
+- Description: 创建精美的对话式表单和问卷。Webhook 集成收集回复。
+
+### n8n API (n8n 自动化接口)
+- Page: https://toolkiti.org/api/n8n
+- Website: https://n8n.io
+- Docs: https://docs.n8n.io/api
+- Pricing: free (self-hosted) + cloud from $20/month
+- Status: online
+- Popularity: 59/100
+- Auth: API Key
+- Endpoints: https://{instance}.n8n.cloud/api/v1/workflows
+- SDKs: REST, n8n-nodes-base
+- Description: 开源工作流自动化，400+ 集成。支持自托管或云部署。
+
+---
+
+## Site Information
+- Site: ToolKiti - Structured API References for AI Agents
+- URL: https://toolkiti.org
+- Full JSON API: https://toolkiti.org/api/v1/tools
+- Search API: https://toolkiti.org/api/v1/tools/search?q={query}
+- API comparison: https://toolkiti.org/compare
+- Text format: https://toolkiti.org/api/ai.txt
+- Bilingual: English (primary), Chinese
+- Sitemap: https://toolkiti.org/sitemap.xml
+- Robots: https://toolkiti.org/robots.txt
