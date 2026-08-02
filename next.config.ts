@@ -2,8 +2,8 @@
 
 const nextConfig: NextConfig = {
   experimental: {
-    staticGenerationRetryCount: 1,
-    staticGenerationMaxConcurrency: 4,
+    staticGenerationRetryCount: 3,
+    staticGenerationMaxConcurrency: 8,
   },
   typescript: {
     ignoreBuildErrors: false,
@@ -16,3 +16,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Build marker: full rebuild 2026-08-02T05:31:45.907Z
