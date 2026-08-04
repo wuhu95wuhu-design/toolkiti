@@ -17,9 +17,9 @@
     }
   },
   "stats": {
-    "total_apis": 107,
-    "total_categories": 9,
-    "try_it_links": 32
+    "total_apis": 127,
+    "total_categories": 13,
+    "try_it_links": 71
   },
   "categories": [
     {"id": "llm", "name": "LLM Providers", "name_zh": "大语言模型", "count": 9},

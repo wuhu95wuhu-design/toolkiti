@@ -172,13 +172,13 @@ export default function Home() {
           </div>
           <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
             <a href="/robots.txt" className="underline">robots.txt</a>
+            <a href="/sitemap.xml" className="underline">sitemap.xml</a>
+            <a href="/rss.xml" className="underline">rss.xml</a>
             <a href="/llms.txt" className="underline">llms.txt</a>
             <a href="/llms-full.txt" className="underline">llms-full.txt</a>
+            <a href="/agents.txt" className="underline">agents.txt</a>
             <a href="/openapi.json" className="underline">openapi.json</a>
             <a href="/.well-known/ai-plugin.json" className="underline">ai-plugin.json</a>
-            <a href="/llms.txt" className="underline">llms.txt</a>
-            <a href="/llms-full.txt" className="underline">llms-full.txt</a>
-            <a href="/sitemap.xml" className="underline">sitemap.xml</a>
           </div>
         </section>
 

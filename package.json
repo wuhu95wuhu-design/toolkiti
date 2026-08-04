@@ -1,27 +1,28 @@
 {
-    "name":  "toolkiti",
-    "version":  "0.1.0",
-    "private":  true,
-    "scripts":  {
-                    "prebuild":  "node scripts/prebuild.mjs",
-                    "build":  "node scripts/prebuild.mjs \u0026\u0026 cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next build",
-                    "dev":  "node scripts/prebuild.mjs \u0026\u0026 cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next dev",
-                    "start":  "next start",
-                    "validate":  "node scripts/prebuild.mjs"
-                },
-    "dependencies":  {
-                         "cross-env":  "^7.0.3",
-                         "next":  "^15.2.0",
-                         "react":  "^19.0.0",
-                         "react-dom":  "^19.0.0",
-                         "@vercel/analytics":  "1.5.0"
-                     },
-    "devDependencies":  {
-                            "@tailwindcss/postcss":  "^4",
-                            "@types/node":  "^22",
-                            "@types/react":  "^19",
-                            "@types/react-dom":  "^19",
-                            "tailwindcss":  "^4",
-                            "typescript":  "^5"
-                        }
+  "name": "toolkiti",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "node scripts/prebuild.mjs",
+    "build": "node scripts/prebuild.mjs && cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next build",
+    "dev": "node scripts/prebuild.mjs && cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next dev",
+    "start": "next start",
+    "validate": "node scripts/prebuild.mjs",
+    "postbuild": "node scripts/ping-indexnow.mjs"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "next": "^15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@vercel/analytics": "1.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }

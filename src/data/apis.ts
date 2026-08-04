@@ -1240,24 +1240,7 @@ export const apis: ApiEntry[] = [
     popularity: 70,
     tags: ["llm", "chat", "real-time", "vision"],
     referralUrl: "https://x.ai/?ref=toolkiti"
-  }
-];
-
-export const categories = [
-  { slug: "llm", name: "LLM Providers", nameCn: "大语言模型" },
-  { slug: "ml", name: "Machine Learning", nameCn: "机器学习" },
-  { slug: "image", name: "Image Generation", nameCn: "图像生成" },
-  { slug: "audio", name: "Audio & Speech", nameCn: "音频语音" },
-  { slug: "vector-db", name: "Vector Databases", nameCn: "向量数据库" },
-  { slug: "cloud-gpu", name: "GPU Cloud", nameCn: "GPU 云" },
-  { slug: "tools", name: "Developer Tools", nameCn: "开发工具" },
-  { slug: "search", name: "Web Search", nameCn: "搜索服务" },
-  { slug: "ai-ide", name: "AI IDE", nameCn: "AI 编辑器" },
-  { slug: "payment", name: "Payment & Fintech", nameCn: "支付金融" },
-  { slug: "cloud-infra", name: "Cloud Infrastructure", nameCn: "云基础设施" },
-  { slug: "data", name: "Data & Analytics", nameCn: "数据分析" },
-  { slug: "automation", name: "Automation", nameCn: "自动化工作流" },
-
+  },
 
   // ===== PAYMENT / FINTECH =====
   {
@@ -2546,6 +2529,24 @@ export const categories = [
     tags: ["climate", "sustainability", "payment"]
   },
 ];
+
+
+export const categories = [
+  { slug: "llm", name: "LLM Providers", nameCn: "大语言模型" },
+  { slug: "ml", name: "Machine Learning", nameCn: "机器学习" },
+  { slug: "image", name: "Image Generation", nameCn: "图像生成" },
+  { slug: "audio", name: "Audio & Speech", nameCn: "音频语音" },
+  { slug: "vector-db", name: "Vector Databases", nameCn: "向量数据库" },
+  { slug: "cloud-gpu", name: "GPU Cloud", nameCn: "GPU 云" },
+  { slug: "tools", name: "Developer Tools", nameCn: "开发工具" },
+  { slug: "search", name: "Web Search", nameCn: "搜索服务" },
+  { slug: "ai-ide", name: "AI IDE", nameCn: "AI 编辑器" },
+  { slug: "payment", name: "Payment & Fintech", nameCn: "支付金融" },
+  { slug: "cloud-infra", name: "Cloud Infrastructure", nameCn: "云基础设施" },
+  { slug: "data", name: "Data & Analytics", nameCn: "数据分析" },
+  { slug: "automation", name: "Automation", nameCn: "自动化工作流" },
+];
+
 
 
 

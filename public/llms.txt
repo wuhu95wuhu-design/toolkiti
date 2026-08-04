@@ -2,13 +2,14 @@
 > Structured, machine-readable API references for AI agents and developers. Bilingual (EN/ZH).
 
 ## Core Resources
-- JSON API: https://toolkiti.org/api/v1/tools (107 APIs, 9 categories)
+- JSON API: https://toolkiti.org/api/v1/tools (127 APIs, 13 categories)
 - Search API: https://toolkiti.org/api/v1/tools/search?q={query}
 - Compare API: https://toolkiti.org/api/v1/tools/compare?ids=slug1,slug2
 - Detail API: https://toolkiti.org/api/v1/tools/{slug}
 - Categories: https://toolkiti.org/api/v1/tools/categories
 - Full dataset: https://toolkiti.org/api/data
 - AI-optimized index: https://toolkiti.org/api/ai.txt
+- RSS Feed: https://toolkiti.org/rss.xml (daily updates)
 - Agents.txt (AI agent manifest): https://toolkiti.org/agents.txt
 - Structured JSON catalog: https://toolkiti.org/structured-data.json
 

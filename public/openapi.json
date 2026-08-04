@@ -1,6 +1,6 @@
 ﻿{
   "openapi": "3.0.0",
-  "info": { "title": "ToolKiti API", "version": "1.0.0", "description": "Structured API directory for AI agents. Search, compare, and get details on 100+ AI/LLM/cloud APIs." },
+  "info": { "title": "ToolKiti API", "version": "1.0.0", "description": "Structured API directory for AI agents. Search, compare, and get details on 127 AI/LLM/cloud APIs." },
   "servers": [{ "url": "https://toolkiti.org" }],
   "paths": {
     "/api/v1/tools/search": {

@@ -1,10 +1,10 @@
-# ToolKiti AI Agent Manifest - Refreshed 2026-08-02
-# ToolKiti â€?AI Agent Access Guide
+# ToolKiti AI Agent Manifest - Refreshed 2026-08-03
+# ToolKiti â€” AI Agent Access Guide
 # https://www.toolkiti.org/agents.txt
 # This file tells AI agents how to interact with ToolKiti
 
 # What ToolKiti provides
-description: Structured API references and tool listings for AI agents and developers. 107+ APIs across 9 categories. Clean, machine-readable, bilingual (EN/ZH).
+description: Structured API references and tool listings for AI agents and developers. 127 APIs across 13 categories. Clean, machine-readable, bilingual (EN/ZH).
 
 # JSON API for programmatic access
 api: https://www.toolkiti.org/api/v1/tools

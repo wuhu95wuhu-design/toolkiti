@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | ToolKiti",
   },
   description:
-    "Structured, machine-readable API references and tool listings for AI agents and developers. 32 APIs across 8 categories with code examples, pricing, endpoints, SDKs, popularity rankings, and side-by-side comparison. Bilingual EN/ZH.",
+    "Structured, machine-readable API references and tool listings for AI agents and developers. 127 APIs across 13 categories with code examples, pricing, endpoints, SDKs, popularity rankings, and side-by-side comparison. Bilingual EN/ZH.",
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     siteName: "ToolKiti",
     title: "ToolKiti — API & Tool Reference for AI Agents",
     description:
-      "Structured API references for AI agents and developers. 32 APIs, 8 categories, code examples, comparison tools, popularity rankings.",
+      "Structured API references for AI agents and developers. 127 APIs, 13 categories, code examples, comparison tools, popularity rankings.",
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
     title: "ToolKiti — API & Tool Reference for AI Agents",
     description:
-      "Structured API references for AI agents. 32 APIs, code examples, comparison tools, bilingual EN/ZH.",
+      "Structured API references for AI agents. 127 APIs, code examples, comparison tools, bilingual EN/ZH.",
   },
   alternates: {
     canonical: siteUrl,

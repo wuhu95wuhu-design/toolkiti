@@ -7,5 +7,3 @@ Allow: /api/ai.txt
 Crawl-delay: 0
 
 Sitemap: https://toolkiti.org/sitemap.xml
-Sitemap: https://toolkiti.org/llms.txt
-Sitemap: https://toolkiti.org/llms-full.txt
