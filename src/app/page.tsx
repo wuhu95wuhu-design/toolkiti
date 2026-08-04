@@ -1,11 +1,10 @@
-ï»¿import Link from "next/link";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Logo from "@/components/Logo";
 import ApiCard from "@/components/ApiCard";
 import TopPicks from "@/components/TopPicks";
 import SponsoredApiOfWeek from "@/components/SponsoredApiOfWeek";
 import PremiumDataTeaser from "@/components/PremiumDataTeaser";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import dynamic from "next/dynamic";
 const SearchSection = dynamic(() => import("@/components/SearchSection"), {
   loading: () => (
@@ -105,11 +104,11 @@ export default function Home() {
         <section className="mb-10">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Latest from Blog</h2>
-            <Link href="/blog" className="text-sm text-[var(--accent)] hover:underline">View all â†’</Link>
+            <Link href="/blog" className="text-sm text-[var(--accent)] hover:underline">View all ¡ú</Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            <BlogCard slug="top-llm-apis-2026-compared" title="Top 10 LLM APIs Compared" excerpt="GPT-4o, Claude 3.5, Gemini 2.0 â€” real benchmarks and prices." date="2026-07-30" category="AI" />
-            <BlogCard slug="ai-agent-tool-stack" title="Building an AI Agent: Full API Stack" excerpt="From LLM to payment â€” every API your agent needs." date="2026-07-28" category="Guide" />
+            <BlogCard slug="top-llm-apis-2026-compared" title="Top 10 LLM APIs Compared" excerpt="GPT-4o, Claude 3.5, Gemini 2.0 ¡ª real benchmarks and prices." date="2026-07-30" category="AI" />
+            <BlogCard slug="ai-agent-tool-stack" title="Building an AI Agent: Full API Stack" excerpt="From LLM to payment ¡ª every API your agent needs." date="2026-07-28" category="Guide" />
             <BlogCard slug="api-pricing-trends-2026" title="API Pricing Trends 2026" excerpt="LLM costs dropped 80%. What it means for builders." date="2026-07-25" category="Analysis" />
           </div>
         </section>
@@ -124,7 +123,7 @@ export default function Home() {
           </div>
           <div className="mt-4 text-center">
             <Link href="/compare" className="inline-flex items-center gap-1 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-2 text-sm transition-colors hover:border-[var(--accent)]">
-              Compare APIs â†’
+              Compare APIs ¡ú
             </Link>
           </div>
         </section>
@@ -147,11 +146,11 @@ export default function Home() {
             <a href="https://github.com/wuhu95wuhu-design/toolkiti/issues/new?labels=api-request&template=api_request.md&title=Request: "
               target="_blank" rel="noopener noreferrer"
               className="inline-block rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-2.5 text-sm font-semibold transition-colors hover:border-[var(--accent)]">
-              Request API â†’
+              Request API ¡ú
             </a>
             <Link href="/submit"
               className="inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-              Submit API â†’
+              Submit API ¡ú
             </Link>
           </div>
         </section>
@@ -186,7 +185,6 @@ export default function Home() {
 
         <SupportSection />
       </main>
-      <ExitIntentPopup />
     </>
   );
 }
