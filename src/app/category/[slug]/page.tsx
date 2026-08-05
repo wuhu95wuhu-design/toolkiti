@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ApiCard from "@/components/ApiCard";
@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!cat) return { title: "Category Not Found" };
   const count = getApisByCategory(slug).length;
   return {
-    title: cat.name + " (" + cat.nameCn + ") — " + count + " APIs",
+    title: cat.name + " APIs (Top " + count + " Tools Compared) — 2026 | ToolKiti",
     description: count + " APIs in the " + cat.name + " (" + cat.nameCn + ") category. " + getApisByCategory(slug).map(a => a.name).join(", ") + ".",
     openGraph: {
-      title: cat.name + " APIs",
-      description: "Browse " + count + " APIs in the " + cat.nameCn + " category.",
+      title: "Best " + cat.name + " APIs (2026)",
+      description: "Best " + cat.name + " APIs: compare pricing, free tiers & alternatives for " + count + " tools in " + cat.nameCn + " category.",
       url: "https://www.toolkiti.org/category/" + cat.slug,
     },
   };

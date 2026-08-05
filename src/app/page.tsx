@@ -1,4 +1,4 @@
-import Link from "next/link";
+ï»¿import Link from "next/link";
 import Header from "@/components/Header";
 import Logo from "@/components/Logo";
 import ApiCard from "@/components/ApiCard";
@@ -104,11 +104,11 @@ export default function Home() {
         <section className="mb-10">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Latest from Blog</h2>
-            <Link href="/blog" className="text-sm text-[var(--accent)] hover:underline">View all ¡ú</Link>
+            <Link href="/blog" className="text-sm text-[var(--accent)] hover:underline">View all ï¿½ï¿½</Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            <BlogCard slug="top-llm-apis-2026-compared" title="Top 10 LLM APIs Compared" excerpt="GPT-4o, Claude 3.5, Gemini 2.0 ¡ª real benchmarks and prices." date="2026-07-30" category="AI" />
-            <BlogCard slug="ai-agent-tool-stack" title="Building an AI Agent: Full API Stack" excerpt="From LLM to payment ¡ª every API your agent needs." date="2026-07-28" category="Guide" />
+            <BlogCard slug="top-llm-apis-2026-compared" title="Top 10 LLM APIs Compared" excerpt="GPT-4o, Claude 3.5, Gemini 2.0 ï¿½ï¿½ real benchmarks and prices." date="2026-07-30" category="AI" />
+            <BlogCard slug="ai-agent-tool-stack" title="Building an AI Agent: Full API Stack" excerpt="From LLM to payment ï¿½ï¿½ every API your agent needs." date="2026-07-28" category="Guide" />
             <BlogCard slug="api-pricing-trends-2026" title="API Pricing Trends 2026" excerpt="LLM costs dropped 80%. What it means for builders." date="2026-07-25" category="Analysis" />
           </div>
         </section>
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
           <div className="mt-4 text-center">
             <Link href="/compare" className="inline-flex items-center gap-1 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-2 text-sm transition-colors hover:border-[var(--accent)]">
-              Compare APIs ¡ú
+              Compare APIs ï¿½ï¿½
             </Link>
           </div>
         </section>
@@ -146,11 +146,11 @@ export default function Home() {
             <a href="https://github.com/wuhu95wuhu-design/toolkiti/issues/new?labels=api-request&template=api_request.md&title=Request: "
               target="_blank" rel="noopener noreferrer"
               className="inline-block rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-2.5 text-sm font-semibold transition-colors hover:border-[var(--accent)]">
-              Request API ¡ú
+              Request API ï¿½ï¿½
             </a>
             <Link href="/submit"
               className="inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-              Submit API ¡ú
+              Submit API ï¿½ï¿½
             </Link>
           </div>
         </section>

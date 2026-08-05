@@ -32,6 +32,8 @@ const stacks = [
   ]},
 ];
 
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "4 Production AI Agent Stacks: Coding, Research, Support & Data (2026) | ToolKiti", description: "4 production AI agent templates. Coding agent, research agent, customer support agent & data analysis agent. Full API stack, cost breakdown & deployment guides." };
 export default function AgentStacksPage() {
   return (<>
     <Header />

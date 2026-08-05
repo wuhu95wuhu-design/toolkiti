@@ -47,6 +47,9 @@ const posts = [
   }
 ];
 
+
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "AI API Blog — LLM Comparisons, Pricing Guides & Developer Tutorials (2026) | ToolKiti", description: "Expert comparisons of AI APIs: LLM pricing trends, vector database showdowns, agent stack guides & API monetization strategies. Updated 2026." };
 export default function BlogPage() {
   return (
     <>

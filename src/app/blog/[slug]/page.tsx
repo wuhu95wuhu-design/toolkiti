@@ -313,6 +313,15 @@ This means you can use the OpenAI Python/JS SDKs with your self-hosted models â€
   },
 };
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = posts[slug];
+  if (!post) return { title: "Post Not Found" };
+  return { title: post.title + " (2026) | ToolKiti Blog", description: post.title + ". API comparison, pricing analysis & developer guides from ToolKiti." };
+}
+
 export async function generateStaticParams() {
   return Object.keys(posts).map(slug => ({ slug }));
 }

@@ -1,6 +1,8 @@
 ﻿import Link from "next/link";
 import Header from "@/components/Header";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Sponsor ToolKiti — Reach 500+ AI Developers (2026)", description: "Sponsor ToolKiti and reach AI developers searching for APIs. Featured listings, homepage placement & newsletter sponsorship available." };
 export default function SponsorPage() {
   return (
     <>

@@ -1,6 +1,8 @@
 ﻿import Link from "next/link";
 import Header from "@/components/Header";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "20 Free AI APIs in 2026 (No Credit Card) — LLM, Image, Search & More | ToolKiti", description: "20 AI APIs with free tiers in 2026. No credit card required. Includes Gemini, DeepSeek, Groq, Tavily, Supabase & more. Start building for ." };
 export default function FreeTierPage() {
   return (<>
     <Header />

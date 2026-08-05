@@ -6,26 +6,22 @@ const siteUrl = "https://toolkiti.org";
 
 export const metadata: Metadata = {
   title: {
-    default: "ToolKiti — API & Tool Reference for AI Agents",
+    default: "ToolKiti �� AI API Directory: Compare 127 APIs, Pricing & Free Tiers (2026)",
     template: "%s | ToolKiti",
   },
   description:
-    "Structured, machine-readable API references and tool listings for AI agents and developers. 127 APIs across 13 categories with code examples, pricing, endpoints, SDKs, popularity rankings, and side-by-side comparison. Bilingual EN/ZH.",
+    "Find the best AI APIs in 2026. Compare 127 APIs across 13 categories: pricing, free tiers, latency, code examples & side-by-side comparisons. Updated daily. Bilingual EN/ZH.",
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "ToolKiti",
-    title: "ToolKiti — API & Tool Reference for AI Agents",
+    title: "ToolKiti �� Compare 127 AI APIs: Pricing, Free Tiers & Alternatives (2026)",
     description:
-      "Structured API references for AI agents and developers. 127 APIs, 13 categories, code examples, comparison tools, popularity rankings.",
+      "127 AI APIs compared. Find pricing, free tiers, code examples, and side-by-side comparisons for GPT-4o, Claude, Gemini, DeepSeek & more.",
     url: siteUrl,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ToolKiti — API & Tool Reference for AI Agents",
-    description:
-      "Structured API references for AI agents. 127 APIs, code examples, comparison tools, bilingual EN/ZH.",
+  twitter: { card: "summary_large_image", title: "ToolKiti �� Compare 127 AI APIs: Pricing, Free Tiers & Alternatives", description: "127 AI APIs compared. Pricing, free tiers, code examples, side-by-side comparisons. Updated daily."",
   },
   alternates: {
     canonical: siteUrl,

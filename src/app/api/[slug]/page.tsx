@@ -20,11 +20,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const api = getApiBySlug(slug);
   if (!api) return { title: "API Not Found" };
   return {
-    title: api.name + " API — Docs, Pricing & Endpoints",
-    description: api.description + " Category: " + api.categoryCn + ". Pricing: " + api.pricing + ". SDKs: " + api.sdks.join(", ") + ".",
-    openGraph: {
-      title: api.name + " API",
-      description: api.descriptionCn || api.description,
+    title: api.name + " API: Pricing, Free Tier & Alternatives (2026) | ToolKiti",
+    description: api.name + " API: " + (api.descriptionCn || api.description).slice(0,120) + ". Pricing: " + api.pricing + ". Compare alternatives, free tier & code examples.",
+    openGraph: { title: api.name + " API — Pricing & Alternatives (2026)",
+      description: "Compare " + api.name + " API pricing, free tier & alternatives. " + (api.descriptionCn || api.description),
       url: "https://toolkiti.org/api/" + api.slug,
     },
   };

@@ -1,6 +1,8 @@
 ﻿import Link from "next/link";
 import Header from "@/components/Header";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Submit Your API to ToolKiti — Free Listing for AI Tools (2026)", description: "Submit your API or developer tool to ToolKiti's AI API directory. Free basic listings available. Reach developers searching for APIs." };
 export default function SubmitPage() {
   return (
     <>

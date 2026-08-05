@@ -19,6 +19,8 @@ const servers = [
   { name: "Resend MCP", gh: "resend/mcp-server", install: "npx @resend/mcp", desc: "Send emails from your agent. React email templates, tracking, and analytics.", tools: ["send_email", "get_email_status"] },
 ];
 
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "15 MCP Servers for AI Agents — Search, Database, Browser & More (2026) | ToolKiti", description: "15 Model Context Protocol (MCP) servers for AI agents. Brave Search, GitHub, Postgres, Puppeteer, Slack & more. Install commands & tools listed." };
 export default function MCPServersPage() {
   return (<>
     <Header />

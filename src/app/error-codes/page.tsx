@@ -19,6 +19,8 @@ const errors = [
   { code: "503", api: "Supabase", title: "Database Unavailable", cause: "Project is paused (free tier) or database is restarting.", fix: "Go to app.supabase.com and unpause project. Wait for restart to complete (~30s)." },
 ];
 
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "15 Common API Error Codes & Fixes: Curl Debugging Guide (2026) | ToolKiti", description: "Debug 15 common API error codes with curl examples. 401, 403, 429, 500, CORS errors & more. Step-by-step fixes for REST API developers." };
 export default function ErrorCodesPage() {
   return (<>
     <Header />
