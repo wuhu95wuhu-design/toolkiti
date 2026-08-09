@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
 
-const INDEXNOW_KEY = "e941cc2de4184c24979e33359c52d99a";
+const INDEXNOW_KEY = "f452965da85d46369ed3b7c2c041cf80";
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 const SITE = "https://www.toolkiti.org";
 
