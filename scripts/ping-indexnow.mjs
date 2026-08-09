@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Post-build: ping IndexNow (Bing, Yandex, Seznam) with all site URLs.
  * Runs after next build on Vercel.
  */
@@ -11,7 +11,7 @@ const ROOT = join(__dirname, "..");
 
 const INDEXNOW_KEY = "e941cc2de4184c24979e33359c52d99a";
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
-const SITE = "https://toolkiti.org";
+const SITE = "https://www.toolkiti.org";
 
 async function pingIndexNow() {
   const urls = [];
@@ -46,9 +46,9 @@ async function pingIndexNow() {
   console.log(`Pinging IndexNow with ${urls.length} core URLs...`);
 
   const body = JSON.stringify({
-    host: "toolkiti.org",
+    host: "www.toolkiti.org",
     key: INDEXNOW_KEY,
-    keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`,
+    keyLocation: `https://www.toolkiti.org/${INDEXNOW_KEY}.txt`,
     urlList: urls,
   });
 
