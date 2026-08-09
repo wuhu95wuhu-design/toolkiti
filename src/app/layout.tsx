@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "127 AI APIs compared. Find pricing, free tiers, code examples, and side-by-side comparisons for GPT-4o, Claude, Gemini, DeepSeek & more.",
     url: siteUrl,
   },
-  twitter: { card: "summary_large_image", title: "ToolKiti �� Compare 127 AI APIs: Pricing, Free Tiers & Alternatives", description: "127 AI APIs compared. Pricing, free tiers, code examples, side-by-side comparisons. Updated daily."",
+  twitter: { card: "summary_large_image", title: "ToolKiti �� Compare 127 AI APIs: Pricing, Free Tiers & Alternatives", description: "127 AI APIs compared. Pricing, free tiers, code examples, side-by-side comparisons. Updated daily.",
   },
   alternates: {
     canonical: siteUrl,
