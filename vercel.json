@@ -5,5 +5,11 @@
   "installCommand": "npm install",
   "github": {
     "silent": true
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/.well-known/mcp",
+      "destination": "/api/mcp"
+    }
+  ]
 }
