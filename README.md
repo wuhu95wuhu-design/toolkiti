@@ -31,6 +31,33 @@ This site is designed to be consumed by AI agents:
 | OpenAPI spec | https://toolkiti.org/openapi.json |
 | RSS feed (daily updates) | https://toolkiti.org/rss.xml |
 
+## 🤝 MCP Server (for AI Agents)
+
+ToolKiti exposes a **Model Context Protocol (MCP)** server so AI agents can query the directory as tools:
+
+```json
+// Claude Desktop / Cursor / any MCP client:
+{
+  "mcpServers": {
+    "toolkiti": {
+      "url": "https://toolkiti.org/.well-known/mcp"
+    }
+  }
+}
+```
+
+**Available tools:**
+
+| Tool | Description |
+|------|-------------|
+| `search_tools` | Search 127+ APIs by keyword (tts, image, vector, payment…) |
+| `get_tool` | Full details of one API: pricing, auth, endpoints, SDKs |
+| `compare_tools` | Compare 2-5 APIs side-by-side |
+| `list_categories` | List all 13 categories with counts |
+| `list_tools` | Paginated list of all APIs |
+
+Protocol: MCP Streamable HTTP, JSON-RPC 2.0, protocol version `2025-06-18`.
+
 ## 🗂 Categories
 
 LLM Providers · Machine Learning · Image Generation · Audio & Speech · Vector Databases · GPU Cloud · Developer Tools · Web Search · AI IDE · Payment & Fintech · Cloud Infrastructure · Data & Analytics · Automation

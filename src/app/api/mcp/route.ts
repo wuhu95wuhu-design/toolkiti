@@ -134,7 +134,9 @@ function handleToolsCall(id: unknown, params: any) {
       case "compare_tools": {
         const ids = String(args.ids || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
         if (ids.length < 2) return rpcError(id, -32602, "Provide at least 2 slugs (comma-separated)");
-        const rows = ids.map((s) => apis.find((a) => a.slug === s)).filter(Boolean);
+        const rows = ids
+          .map((s) => apis.find((a) => a.slug === s))
+          .filter((a): a is (typeof apis)[number] => Boolean(a));
         content = JSON.stringify({
           compared: rows.map((a) => ({
             slug: a.slug, name: a.name, category: a.category, pricing: a.pricing,
