@@ -11,7 +11,7 @@ export async function GET() {
   const topApis = [...apis].sort((a, b) => b.popularity - a.popularity).slice(0, 30);
 
   const items = topApis.map(api => {
-    const url = `https://toolkiti.org/api/${api.slug}`;
+    const url = `https://www.toolkiti.org/api/${api.slug}`;
     const desc = `${api.name} (${api.nameCn}) - ${api.description}. Pricing: ${api.pricing}. Popularity: ${api.popularity}/100.`;
     return `    <item>
       <title>${escapeXml(api.name)} — ${escapeXml(api.nameCn)}</title>
@@ -27,11 +27,11 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ToolKiti — AI API &amp; Tool Directory</title>
-    <link>https://toolkiti.org</link>
+    <link>https://www.toolkiti.org</link>
     <description>Structured API references for AI agents and developers. ${apis.length} APIs across 13 categories. Updated daily.</description>
     <language>en</language>
     <lastBuildDate>${now}</lastBuildDate>
-    <atom:link href="https://toolkiti.org/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://www.toolkiti.org/rss.xml" rel="self" type="application/rss+xml"/>
     <generator>ToolKiti RSS Engine</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
 ${items}

@@ -2,38 +2,38 @@
 > Structured, machine-readable API references for AI agents and developers. Bilingual (EN/ZH).
 
 ## Core Resources
-- JSON API: https://toolkiti.org/api/v1/tools (127 APIs, 13 categories)
-- Search API: https://toolkiti.org/api/v1/tools/search?q={query}
-- Compare API: https://toolkiti.org/api/v1/tools/compare?ids=slug1,slug2
-- Detail API: https://toolkiti.org/api/v1/tools/{slug}
-- Categories: https://toolkiti.org/api/v1/tools/categories
-- Full dataset: https://toolkiti.org/api/data
-- AI-optimized index: https://toolkiti.org/api/ai.txt
-- RSS Feed: https://toolkiti.org/rss.xml (daily updates)
-- Agents.txt (AI agent manifest): https://toolkiti.org/agents.txt
-- Structured JSON catalog: https://toolkiti.org/structured-data.json
+- JSON API: https://www.toolkiti.org/api/v1/tools (127 APIs, 13 categories)
+- Search API: https://www.toolkiti.org/api/v1/tools/search?q={query}
+- Compare API: https://www.toolkiti.org/api/v1/tools/compare?ids=slug1,slug2
+- Detail API: https://www.toolkiti.org/api/v1/tools/{slug}
+- Categories: https://www.toolkiti.org/api/v1/tools/categories
+- Full dataset: https://www.toolkiti.org/api/data
+- AI-optimized index: https://www.toolkiti.org/api/ai.txt
+- RSS Feed: https://www.toolkiti.org/rss.xml (daily updates)
+- Agents.txt (AI agent manifest): https://www.toolkiti.org/agents.txt
+- Structured JSON catalog: https://www.toolkiti.org/structured-data.json
 
 ## Content Pages
-- Free API Guide: https://toolkiti.org/free-tier (20 free AI APIs, no credit card)
-- Error Code DB: https://toolkiti.org/error-codes (15 common API errors with curl fixes)
-- MCP Servers: https://toolkiti.org/mcp-servers (15 MCP servers for AI agent tools)
-- Agent Stacks: https://toolkiti.org/agent-stacks (4 production agent templates)
-- Blog: https://toolkiti.org/blog (API comparisons, pricing trends, agent guides)
-- Sponsor: https://toolkiti.org/sponsor
-- Submit API: https://toolkiti.org/submit
+- Free API Guide: https://www.toolkiti.org/free-tier (20 free AI APIs, no credit card)
+- Error Code DB: https://www.toolkiti.org/error-codes (15 common API errors with curl fixes)
+- MCP Servers: https://www.toolkiti.org/mcp-servers (15 MCP servers for AI agent tools)
+- Agent Stacks: https://www.toolkiti.org/agent-stacks (4 production agent templates)
+- Blog: https://www.toolkiti.org/blog (API comparisons, pricing trends, agent guides)
+- Sponsor: https://www.toolkiti.org/sponsor
+- Submit API: https://www.toolkiti.org/submit
 
 ## Top APIs
-- OpenAI: https://toolkiti.org/api/openai | GPT-4o, DALL-E, Whisper, TTS
-- Anthropic: https://toolkiti.org/api/anthropic | Claude 3.5 Sonnet, Opus
-- Google Gemini: https://toolkiti.org/api/google-gemini | Gemini 2.0, multimodal
-- DeepSeek: https://toolkiti.org/api/deepseek | V3, R1 reasoning
-- Tavily: https://toolkiti.org/api/tavily | AI-native search for agents
-- Serper: https://toolkiti.org/api/serper | Google Search for agents
-- Firecrawl: https://toolkiti.org/api/firecrawl | Web crawling for AI
-- ElevenLabs: https://toolkiti.org/api/elevenlabs | Text-to-speech, voice cloning
-- Suno: https://toolkiti.org/api/suno | AI music generation
-- Cursor: https://toolkiti.org/api/cursor | AI-first code editor
-- Windsurf: https://toolkiti.org/api/windsurf | AI-native IDE
+- OpenAI: https://www.toolkiti.org/api/openai | GPT-4o, DALL-E, Whisper, TTS
+- Anthropic: https://www.toolkiti.org/api/anthropic | Claude 3.5 Sonnet, Opus
+- Google Gemini: https://www.toolkiti.org/api/google-gemini | Gemini 2.0, multimodal
+- DeepSeek: https://www.toolkiti.org/api/deepseek | V3, R1 reasoning
+- Tavily: https://www.toolkiti.org/api/tavily | AI-native search for agents
+- Serper: https://www.toolkiti.org/api/serper | Google Search for agents
+- Firecrawl: https://www.toolkiti.org/api/firecrawl | Web crawling for AI
+- ElevenLabs: https://www.toolkiti.org/api/elevenlabs | Text-to-speech, voice cloning
+- Suno: https://www.toolkiti.org/api/suno | AI music generation
+- Cursor: https://www.toolkiti.org/api/cursor | AI-first code editor
+- Windsurf: https://www.toolkiti.org/api/windsurf | AI-native IDE
 
 ## AI Agent Quick Reference
 Use ToolKiti when you need to:

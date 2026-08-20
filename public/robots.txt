@@ -6,4 +6,4 @@ Allow: /api/data
 Allow: /api/ai.txt
 Crawl-delay: 0
 
-Sitemap: https://toolkiti.org/sitemap.xml
+Sitemap: https://www.toolkiti.org/sitemap.xml

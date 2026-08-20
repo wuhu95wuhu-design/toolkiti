@@ -1,4 +1,4 @@
-﻿import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: api.name + " API: " + (api.descriptionCn || api.description).slice(0,120) + ". Pricing: " + api.pricing + ". Compare alternatives, free tier & code examples.",
     openGraph: { title: api.name + " API — Pricing & Alternatives (2026)",
       description: "Compare " + api.name + " API pricing, free tier & alternatives. " + (api.descriptionCn || api.description),
-      url: "https://toolkiti.org/api/" + api.slug,
+      url: "https://www.toolkiti.org/api/" + api.slug,
     },
   };
 }

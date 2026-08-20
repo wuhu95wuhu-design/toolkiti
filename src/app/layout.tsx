@@ -3,11 +3,11 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 
-const siteUrl = "https://toolkiti.org";
+const siteUrl = "https://www.toolkiti.org";
 
 export const metadata: Metadata = {
   title: {
-    default: "ToolKiti �� AI API Directory: Compare 127 APIs, Pricing & Free Tiers (2026)",
+    default: "ToolKiti - AI API Directory: Compare 127 APIs, Pricing & Free Tiers (2026)",
     template: "%s | ToolKiti",
   },
   description:
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "ToolKiti",
-    title: "ToolKiti �� Compare 127 AI APIs: Pricing, Free Tiers & Alternatives (2026)",
+    title: "ToolKiti - Compare 127 AI APIs: Pricing, Free Tiers & Alternatives (2026)",
     description:
       "127 AI APIs compared. Find pricing, free tiers, code examples, and side-by-side comparisons for GPT-4o, Claude, Gemini, DeepSeek & more.",
     url: siteUrl,
   },
-  twitter: { card: "summary_large_image", title: "ToolKiti �� Compare 127 AI APIs: Pricing, Free Tiers & Alternatives", description: "127 AI APIs compared. Pricing, free tiers, code examples, side-by-side comparisons. Updated daily.",
+  twitter: { card: "summary_large_image", title: "ToolKiti - Compare 127 AI APIs: Pricing, Free Tiers & Alternatives", description: "127 AI APIs compared. Pricing, free tiers, code examples, side-by-side comparisons. Updated daily.",
   },
   alternates: {
     canonical: siteUrl,

@@ -1,4 +1,4 @@
-﻿import { apis } from "@/data/apis";
+import { apis } from "@/data/apis";
 import { extendedData } from "@/data/extended";
 
 export const dynamic = "force-static";
@@ -41,7 +41,7 @@ export async function GET() {
       const badge = api.popularity >= 90 ? "[HOT]" : api.popularity >= 75 ? "[POPULAR]" : "";
       
       lines.push(`### ${badge} ${api.name}`);
-      lines.push(`- URL: https://toolkiti.org/api/${api.slug}`);
+      lines.push(`- URL: https://www.toolkiti.org/api/${api.slug}`);
       lines.push(`- Description: ${api.description}`);
       lines.push(`- Pricing: ${api.pricing}`);
       lines.push(`- Authentication: ${api.auth.join(", ")}`);
@@ -74,10 +74,10 @@ export async function GET() {
 
   lines.push("## Site Information");
   lines.push("- Site: ToolKiti - Structured API References for AI Agents");
-  lines.push("- URL: https://toolkiti.org");
-  lines.push("- Full JSON data: https://toolkiti.org/api/data");
-  lines.push("- API comparison: https://toolkiti.org/compare");
-  lines.push("- Text format: https://toolkiti.org/api/ai.txt");
+  lines.push("- URL: https://www.toolkiti.org");
+  lines.push("- Full JSON data: https://www.toolkiti.org/api/data");
+  lines.push("- API comparison: https://www.toolkiti.org/compare");
+  lines.push("- Text format: https://www.toolkiti.org/api/ai.txt");
   lines.push("- Bilingual: English (primary), Chinese");
   lines.push("- Search available: On homepage");
   lines.push("");
