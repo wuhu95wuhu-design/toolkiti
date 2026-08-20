@@ -1,18 +1,56 @@
-﻿# ToolKiti
+﻿# ToolKiti — AI API & Tool Directory for Agents
 
-AI 工具情报站 —— 面向 AI Agent 的 API 和工具参考目录。
+> **Compare 127 AI APIs across 13 categories: pricing, free tiers, latency, code examples & side-by-side comparisons. Updated daily. Bilingual (EN/中文).**
 
-## 技术栈
-- Next.js + Tailwind CSS
-- 静态生成，机器优先
-- JSON-LD 结构化数据
+ToolKiti is a structured, machine-readable directory of AI APIs and developer tools — built **for AI agents and developers**. Every page includes JSON-LD structured data, curl-ready examples, and pricing comparisons.
 
-## 本地开发
-```bash
-npm install
-npm run dev
-```
-
-## 部署
-一键部署到 Vercel：
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## ✨ Features
+
+- **127 APIs** across 13 categories (LLM, image, audio, search, vector DB, GPU cloud, payment, cloud infra, automation & more)
+- **Pricing & free tiers** — side-by-side comparisons, updated daily
+- **AI-native formats**: `llms.txt`, `agents.txt`, `structured-data.json`, OpenAPI spec
+- **REST API** for programmatic access (JSON catalog, search, compare)
+- **Bilingual** EN/中文
+
+## 🤖 For AI Agents
+
+This site is designed to be consumed by AI agents:
+
+| Resource | URL |
+|----------|-----|
+| LLM-readable index | https://toolkiti.org/llms.txt |
+| Full AI dataset | https://toolkiti.org/llms-full.txt |
+| Agent manifest | https://toolkiti.org/agents.txt |
+| Structured JSON catalog | https://toolkiti.org/structured-data.json |
+| JSON API (127 APIs) | https://toolkiti.org/api/v1/tools |
+| Search API | https://toolkiti.org/api/v1/tools/search?q={query} |
+| Compare API | https://toolkiti.org/api/v1/tools/compare?ids=slug1,slug2 |
+| Categories | https://toolkiti.org/api/v1/tools/categories |
+| OpenAPI spec | https://toolkiti.org/openapi.json |
+| RSS feed (daily updates) | https://toolkiti.org/rss.xml |
+
+## 🗂 Categories
+
+LLM Providers · Machine Learning · Image Generation · Audio & Speech · Vector Databases · GPU Cloud · Developer Tools · Web Search · AI IDE · Payment & Fintech · Cloud Infrastructure · Data & Analytics · Automation
+
+## 📚 Popular Guides
+
+- [Top 10 LLM APIs Compared](https://toolkiti.org/blog) — real benchmarks and prices
+- [Building an AI Agent: Full API Stack](https://toolkiti.org/blog) — from LLM to payment
+- [API Pricing Trends 2026](https://toolkiti.org/blog) — LLM costs dropped 80%
+- [Free AI APIs](https://toolkiti.org/free-tier) — 20 free APIs, no credit card
+- [MCP Servers](https://toolkiti.org/mcp-servers) — 15 MCP servers for AI agents
+
+## 🚀 Submit Your API
+
+Free basic listings: https://toolkiti.org/submit
+
+## 🛠 Tech Stack
+
+Next.js · Tailwind CSS · Static generation (machine-first) · JSON-LD structured data
+
+## 📄 License
+
+Open-source, supported by the developer community. Some links are affiliate links.
