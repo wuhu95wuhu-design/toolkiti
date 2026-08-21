@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   description:
     "Find the best AI APIs in 2026. Compare 127 APIs across 13 categories: pricing, free tiers, latency, code examples & side-by-side comparisons. Updated daily. Bilingual EN/ZH.",
   robots: { index: true, follow: true },
+  verification: {
+    other: {
+      "msvalidate.01": "D44B98DB7A4CA5A619328E2ED47260C9",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
