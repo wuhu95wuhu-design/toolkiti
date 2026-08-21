@@ -34,5 +34,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
-  return [...staticPages, ...categoryPages, ...apiPages];
+  const blogPages = [
+    "top-llm-apis-2026-compared",
+    "ai-agent-tool-stack",
+    "api-pricing-trends-2026",
+    "vector-database-comparison",
+    "monetize-your-api",
+    "open-source-llm-apis",
+  ].map(slug => ({
+    url: `https://www.toolkiti.org/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+  return [...staticPages, ...categoryPages, ...apiPages, ...blogPages];
 }
