@@ -2,6 +2,32 @@
 
 export const apis: ApiEntry[] = [
   {
+    slug: "lanbuff",
+    name: "Lanbuff API",
+    nameCn: "蓝博 API",
+    category: "llm",
+    categoryCn: "大语言模型",
+    description: "Third-party multi-model AI API aggregation platform for developers and teams, with an OpenAI-compatible interface and pay-as-you-go billing.",
+    descriptionCn: "面向开发者与团队的第三方多模型 AI API 聚合平台，提供 OpenAI 兼容接口与按量计费。",
+    website: "https://lanbuff.app/",
+    docsUrl: "https://lanbuff.apifox.cn/",
+    pricing: "pay-as-you-go; model-specific prices at https://lanbuff.app/pricing",
+    auth: ["API Key (see documentation for authentication details)"],
+    endpoints: [],
+    sdks: [],
+    status: "online",
+    lastUpdated: "2026-10-02",
+    // Unmeasured; placeholder only, not a claim about call volume.
+    popularity: 0,
+    tags: ["llm", "api-aggregation", "openai-compatible", "pay-as-you-go"],
+    features: ["Multi-model API access", "OpenAI-compatible interface", "Pay-as-you-go billing", "Public API documentation"],
+    usageTips: [
+      "Third-party aggregator, not an official model vendor.",
+      "Check the current pricing page for supported models and model-specific rates.",
+      "Consult the documentation for the current base URL and authentication requirements; authenticated API calls have not been independently tested for this submission."
+    ]
+  },
+  {
     slug: "openai",
     name: "OpenAI API",
     nameCn: "OpenAI 接口",
